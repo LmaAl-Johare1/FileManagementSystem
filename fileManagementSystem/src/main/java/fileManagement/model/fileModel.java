@@ -8,14 +8,16 @@ public class fileModel {
     private String fileName;
     private String fileType;
     private String fileSize;
+    private String fileData;
 
 
-    public fileModel(String fileNameEncy, String fileType, Path filePath, String fileSize,String fileName) {
+    public fileModel(String fileNameEncy, String fileType, Path filePath, String fileSize,String fileName , String fileData) {
         this.fileNameEncy = fileNameEncy;
         this.fileName = fileName;
         this.fileType = fileType;
         this.filePath = filePath;
         this.fileSize=fileSize;
+        this.fileData=fileData;
 
     }
 
@@ -60,9 +62,17 @@ public class fileModel {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+    public String getFileData() {
+        return fileData;
+    }
 
+    public void setFileData(String fileData) {
+        this.fileData = fileData;
+    }
     @Override
     public String toString() {
-        return " files [FilePath "+ filePath + ", FileNameEncy = " + fileNameEncy + "FileName = "+ fileName +", FileType = " + fileType +", FileType = "+  fileSize +" ]";
+        return " files [FilePath "+ filePath + ", FileNameEncy = " + fileNameEncy + "FileName = "+ fileName +", FileType = " + fileType +", FileType = "+  fileSize +" , FileData = " + fileData+"]";
     }
+
+
 }

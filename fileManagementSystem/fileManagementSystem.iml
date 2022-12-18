@@ -15,5 +15,16 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.json:json:20190722" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.14.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.14.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.14.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:6.0.2" level="project" />
   </component>
 </module>
