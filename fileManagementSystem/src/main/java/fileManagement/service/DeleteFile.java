@@ -1,6 +1,5 @@
 package fileManagement.service;
 import java.io.*;
-import java.util.Base64;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import org.json.JSONArray;
