@@ -75,11 +75,8 @@ public class FileService {
         try (FileWriter fileWriter = new FileWriter("./files.json")) {
             fileWriter.write(root.toString());
         }
-
-
     }
-
-    }
+}
 
 
 
