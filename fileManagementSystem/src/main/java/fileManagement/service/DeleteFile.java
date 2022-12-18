@@ -33,10 +33,8 @@ public class DeleteFile {
                 JSONArray innerArray = filesArray.getJSONArray(i);
                 for (int j = 0; j < innerArray.length(); j++) {
                     JSONObject objFile = innerArray.getJSONObject(j);
-                    byte[] fileNameBytes = fileName.getBytes();
-                    String encryptedFileName = Base64.getEncoder().encodeToString(fileNameBytes);
-                    String fileNameEncy = objFile.getString("fileNameEncy");
-                    if(fileNameEncy.equals((encryptedFileName))){
+                    String fileNameEncy = objFile.getString("fileName");
+                    if(fileName.equals((fileNameEncy))){
                         filesArray.remove(j);
                         LOGGER.info("File deleted successfully \n");
                         break;
