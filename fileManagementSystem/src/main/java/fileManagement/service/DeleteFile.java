@@ -36,7 +36,7 @@ public class DeleteFile {
                     byte[] fileNameBytes = fileName.getBytes();
                     String encryptedFileName = Base64.getEncoder().encodeToString(fileNameBytes);
                     String fileNameEncy = objFile.getString("fileNameEncy");
-                    if(fileNameEncy.equals((encryptedFileName))){
+                    if(fileNameEncy.equals(encryptedFileName)){
                         filesArray.remove(j);
                         LOGGER.info("File deleted successfully \n");
                         break;
