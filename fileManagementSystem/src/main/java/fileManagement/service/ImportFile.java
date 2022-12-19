@@ -10,8 +10,8 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 import org.json.*;
 
-public class FileService {
-    private static final Logger LOGGER = Logger.getLogger(FileService.class.getName());
+public class ImportFile {
+    private static final Logger LOGGER = Logger.getLogger(ImportFile.class.getName());
  
     public static void ImportFile() throws IOException {
         System.out.print("\n Enter file path you want to add: ");
