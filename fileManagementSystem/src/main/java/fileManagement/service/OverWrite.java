@@ -59,16 +59,16 @@ public class OverWrite {
                 String fileExt = getExtension(filename);
                 if (filename.equals((fileNameDb)) && fileTypeDb.equals(fileExt)) {
                     Scanner toReplace = new Scanner(System.in);
-                    System.out.print("\n The file already exists do you want to overwrite? (yes/no)");
+                    System.out.print("\n Enable Version control? (yes/no)");
                     String replace = toReplace.nextLine().toLowerCase();
                     if (replace.equals("yes")) {
+                        //new version
+                    } else {
                         objFile.put("path", path);
                         objFile.put("fileSize", fileSize);
                         objFile.put("fileData", fileData.toString());
                         fileFound = true;
                         break;
-                    } else {
-                        System.out.print("no");
                     }
                 }
             }
