@@ -9,7 +9,7 @@ import java.util.Base64;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import org.json.*;
-public class NewVersion {
+public class OverWrite {
     private static final Logger LOGGER = Logger.getLogger(DeleteFile.class.getName());
 
     public static void multiVersion() throws IOException {
