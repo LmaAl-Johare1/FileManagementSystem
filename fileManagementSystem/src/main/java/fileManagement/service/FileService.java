@@ -18,14 +18,13 @@ public class FileService {
         Scanner scanPath = new Scanner(System.in);  // Create a Scanner object
         String filePath = scanPath.nextLine(); 
 
-        fileModel file = new fileModel(); //from file model
+        FileModel file = new FileModel(); //from file model
         Path path = Paths.get(filePath); // get path
         String filename = String.valueOf(path.getFileName()); // get filename
         //make it encrypted
         byte[] fileNameBytes = filename.getBytes();
         String encryptedFileName = Base64.getEncoder().encodeToString(fileNameBytes);
         
-        JSONObject obj = new JSONObject();
         //  the size of the file in bytes
         String fileSize = String.valueOf(Files.size(path));
         file.setFileSize(fileSize);
@@ -33,7 +32,7 @@ public class FileService {
         int index = filename.lastIndexOf('.');
         if (index > 0) {
             String extension = filename.substring(index + 1);
-            file.setType(extension);
+            file.setFileType(extension);
         }
         //the data of the file
        String data = "";
@@ -41,7 +40,7 @@ public class FileService {
         String Line;
         while ((Line = reader.readLine()) != null) {
             data += Line ;
-
+            break;
         }
 
         reader.close();
@@ -49,8 +48,8 @@ public class FileService {
         file.setFileName(filename);
         file.setFileNameEncy(encryptedFileName);
         file.setFileData(data);
-        ArrayList<fileModel> array = new ArrayList<fileModel>();
-        array.add(new fileModel(file.getFileNameEncy()+"", file.getType()+"", Path.of(file.getPath() + ""), file.getFileSize()+"", file.getFileName()+"", file.getFileData()+""));
+        ArrayList<FileModel> array = new ArrayList<>();
+        array.add(new FileModel(file.getFileNameEncy()+"", file.getFileType()+"", Path.of(file.getPath() + ""), file.getFileSize()+"", file.getFileName()+"", file.getFileData()+""));
 
         // Read existing data from files.json, if it exists
         File jsonFile = new File("./files.json");

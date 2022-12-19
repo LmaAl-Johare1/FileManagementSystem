@@ -1,15 +1,16 @@
 package fileManagement.model;
 import java.nio.file.Path;
 
-public class fileModel {
+public class FileModel {
     private Path filePath;
     private String fileNameEncy;
     private String fileName;
+
     private String fileType;
     private String fileSize;
     private String fileData;
 
-    public fileModel(String fileNameEncy, String fileType, Path filePath, String fileSize,String fileName , String fileData) {
+    public FileModel(String fileNameEncy, String fileType, Path filePath, String fileSize, String fileName , String fileData) {
         this.fileNameEncy = fileNameEncy;
         this.fileName = fileName;
         this.fileType = fileType;
@@ -18,7 +19,7 @@ public class fileModel {
         this.fileData=fileData;
 
     }
-    public fileModel() {
+    public FileModel() {
     }
 
     public String getFileNameEncy() {
@@ -33,11 +34,11 @@ public class fileModel {
     public void setPath(Path path) {
         this.filePath = path;
     }
-    public String getType() {
+    public String getFileType() {
         return fileType;
     }
-    public void setType(String type) {
-        this.fileType = type;
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
     }
     public String getFileSize() {
         return fileSize;
