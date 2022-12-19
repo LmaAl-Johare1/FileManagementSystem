@@ -1,14 +1,15 @@
 package fileManagement;
 
 import fileManagement.service.DeleteFile;
-import fileManagement.service.FileService;
+import fileManagement.service.ImportFile;
 
 import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws IOException {
-       FileService.ImportFile();
 
+
+       ImportFile.ImportFile();
         DeleteFile.deleteFile();
 
     }
