@@ -33,74 +33,72 @@ public class NewVersion {
             }
             data = new JSONObject(sb.toString());
         }
-
         JSONArray filesArray = data.getJSONArray("files");
         Path path = Paths.get(filePath);
+        String fileSize = String.valueOf(Files.size(path));
         String filename = String.valueOf(path.getFileName());
         //make it encrypted
         byte[] fileNameBytes = filename.getBytes();
         String encryptedFileName = Base64.getEncoder().encodeToString(fileNameBytes);
 
         //the data of the file
-        String fileData = "";
+        StringBuilder fileData = new StringBuilder();
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String Line;
         while ((Line = reader.readLine()) != null) {
-            fileData += Line;
+            fileData.append(Line);
         }
         reader.close();
-
-        if (filesArray.length() == 0) {
-            AddFile(path, filename, encryptedFileName, fileData, filesArray,data);
-            return;
-        }
+        boolean fileFound = false;
         for (int i = 0; i < filesArray.length(); i++) {
-                JSONArray innerArray = filesArray.getJSONArray(i);
-                for (int j = 0; j < innerArray.length(); j++) {
-                    JSONObject objFile = innerArray.getJSONObject(j);
-                    String fileNameDb = objFile.getString("fileName");
-                    String fileTypeDb = objFile.getString("fileType");
-                    String fileExt = GetExtension(filename);
-                    if (filename.equals((fileNameDb)) && fileTypeDb.equals(GetExtension(filename))){
-                        Scanner toReplace = new Scanner(System.in);
-                        System.out.print("\n The file already exists do you want to overwrite? (yes/no)");
-                        String replace = toReplace.nextLine().toLowerCase();
-                        if (replace.equals("yes")) {
-                            objFile.put("path", path);
-                            String fileSize = String.valueOf(Files.size(path));
-                            objFile.put("fileSize", fileSize);
-                            objFile.put("fileData", fileData);
-                            System.out.print("HI");
-                        } else
-                            System.out.print("no");
+            JSONArray innerArray = filesArray.getJSONArray(i);
+            for (int j = 0; j < innerArray.length(); j++) {
+                JSONObject objFile = innerArray.getJSONObject(j);
+                String fileNameDb = objFile.getString("fileName");
+                String fileTypeDb = objFile.getString("fileType");
+                String fileExt = getExtension(filename);
+                if (filename.equals((fileNameDb)) && fileTypeDb.equals(fileExt)) {
+                    Scanner toReplace = new Scanner(System.in);
+                    System.out.print("\n The file already exists do you want to overwrite? (yes/no)");
+                    String replace = toReplace.nextLine().toLowerCase();
+                    if (replace.equals("yes")) {
+                        objFile.put("path", path);
+                        objFile.put("fileSize", fileSize);
+                        objFile.put("fileData", fileData.toString());
+                        fileFound = true;
+                        break;
                     } else {
-                        AddFile(path, filename, encryptedFileName, fileData, filesArray,data);
-                        //LOGGER.info("File added successfully \n");
+                        System.out.print("no");
                     }
                 }
+            }
+        }
+            if (!fileFound) {
+                addFile(path, filename, encryptedFileName, fileData.toString(), filesArray, data, fileSize);
+            }
                 FileWriter fw = new FileWriter("./files.json");
                 fw.write(data.toString());
                 fw.close();
-                }
-
-        // Write the modified data back to the file
-
-}
+            }
 
 
-    private static void AddFile(Path path,String filename,String encryptedFileName,String fileData,JSONArray filesArray,JSONObject data) throws IOException {
+    private static void addFile(Path path, String filename, String encryptedFileName, String fileData, JSONArray filesArray, JSONObject data, String fileSize ) throws IOException {
         FileModel fileModel = new FileModel(); //from file model
         fileModel.setPath(path);
         fileModel.setFileName(filename);
         fileModel.setFileNameEncy(encryptedFileName);
         fileModel.setFileData(fileData);
-        fileModel.setFileType(GetExtension(filename));
+        fileModel.setFileType(getExtension(filename));
+        fileModel.setFileSize(fileSize);
         ArrayList<FileModel> array = new ArrayList<>();
         array.add(new FileModel(fileModel.getFileNameEncy() + "", fileModel.getFileType() + "", Path.of(fileModel.getPath() + ""), fileModel.getFileSize() + "", fileModel.getFileName() + "", fileModel.getFileData() + ""));
         filesArray.put(array);
 
+        try (FileWriter fw = new FileWriter("./files.json")) {
+            fw.write(data.toString());
+        }
     }
-    private static String GetExtension(String filename) {
+    private static String getExtension(String filename) {
         int index = filename.lastIndexOf('.');
         String fileExtension = null;
         if (index > 0) {
