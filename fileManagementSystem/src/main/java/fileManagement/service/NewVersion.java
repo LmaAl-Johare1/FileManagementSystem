@@ -12,9 +12,6 @@ import org.json.*;
 public class NewVersion {
     private static final Logger LOGGER = Logger.getLogger(DeleteFile.class.getName());
 
-    public NewVersion() throws IOException {
-    }
-
     public static void multiVersion() throws IOException {
 
         Scanner scanner = new Scanner(System.in);
@@ -53,24 +50,17 @@ public class NewVersion {
         }
         reader.close();
 
-
-            if (filesArray.length() == 0) {
-                AddFile(path, filename, encryptedFileName, fileData, filesArray,data);
-                return;
-            }
-
+        if (filesArray.length() == 0) {
+            AddFile(path, filename, encryptedFileName, fileData, filesArray,data);
+            return;
+        }
         for (int i = 0; i < filesArray.length(); i++) {
-            /*
-            if (filesArray.length() == 0) {
-                AddFile(path, filename, encryptedFileName, fileData, filesArray,data);
-            }
-             */
                 JSONArray innerArray = filesArray.getJSONArray(i);
                 for (int j = 0; j < innerArray.length(); j++) {
                     JSONObject objFile = innerArray.getJSONObject(j);
                     String fileNameDb = objFile.getString("fileName");
                     String fileTypeDb = objFile.getString("fileType");
-
+                    String fileExt = GetExtension(filename);
                     if (filename.equals((fileNameDb)) && fileTypeDb.equals(GetExtension(filename))){
                         Scanner toReplace = new Scanner(System.in);
                         System.out.print("\n The file already exists do you want to overwrite? (yes/no)");
@@ -88,12 +78,13 @@ public class NewVersion {
                         //LOGGER.info("File added successfully \n");
                     }
                 }
-            }
+                FileWriter fw = new FileWriter("./files.json");
+                fw.write(data.toString());
+                fw.close();
+                }
 
         // Write the modified data back to the file
-        FileWriter fw = new FileWriter("./files.json");
-        fw.write(data.toString());
-        fw.close();
+
 }
 
 
@@ -108,11 +99,7 @@ public class NewVersion {
         array.add(new FileModel(fileModel.getFileNameEncy() + "", fileModel.getFileType() + "", Path.of(fileModel.getPath() + ""), fileModel.getFileSize() + "", fileModel.getFileName() + "", fileModel.getFileData() + ""));
         filesArray.put(array);
 
-        try (FileWriter fw = new FileWriter("./files.json")) {
-            fw.write(data.toString());
-        }
     }
-
     private static String GetExtension(String filename) {
         int index = filename.lastIndexOf('.');
         String fileExtension = null;
