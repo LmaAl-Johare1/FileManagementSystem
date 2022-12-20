@@ -15,20 +15,23 @@ public class DeleteFile extends GetFile {
         readJsonFile();
         JSONArray filesArray = jsonObject.getJSONArray("files");
         // Find the index of the file with the specified name
+        if (filesArray.length()==0) {
+            LOGGER.warning("The file doesn't exist \n");
+        }
         for (int i = 0; i < filesArray.length(); i++) {
             JSONArray innerArray = filesArray.getJSONArray(i);
             for (int j = 0; j < innerArray.length(); j++) {
                 JSONObject objFile = innerArray.getJSONObject(j);
                 String fileNameDb = objFile.getString("fileName");
-                if(fileName.equals((fileNameDb))){
+                if(!fileName.equals((fileNameDb))){
+                    LOGGER.warning("The file doesn't exist \n");
+                }
+                else{
                     filesArray.remove(i);
                     LOGGER.info("File deleted successfully \n");
                     break;
                 }
             }
-        }
-        if (!fileFound) {
-            LOGGER.warning("The file doesn't exist \n");
         }
         updateJsonData(jsonObject);
     }
