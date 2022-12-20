@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Scanner;
 import org.json.*;
-public class VersionControl extends ImportFile{
+public class VersionControl extends GetFile {
     public static void versionControl() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n Enter file path you want to  ");

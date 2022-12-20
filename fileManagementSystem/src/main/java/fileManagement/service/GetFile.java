@@ -4,8 +4,8 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 import org.json.*;
 
-public class ImportFile {
-    public static final Logger LOGGER = Logger.getLogger(ImportFile.class.getName());
+public class GetFile {
+    public static final Logger LOGGER = Logger.getLogger(GetFile.class.getName());
     public static boolean fileFound = false;
      static JSONObject jsonObject;
     public static StringBuilder fileData = new StringBuilder();

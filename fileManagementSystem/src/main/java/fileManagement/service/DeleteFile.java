@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
-public class DeleteFile extends ImportFile {
+public class DeleteFile extends GetFile {
     private static final Logger LOGGER = Logger.getLogger(DeleteFile.class.getName());
     public static void deleteFile() throws IOException {
         Scanner scanner = new Scanner(System.in);
