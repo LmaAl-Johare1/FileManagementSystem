@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="142a2549-1816-47ab-a77c-b8ed0b093078" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/fileManagement/model/File.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_14_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_14_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_14_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20190722.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_3_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_3_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_6_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_6_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_6_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_6_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_6_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_6_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/model/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/exception/JsonReadingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/exception/UserNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/log/logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/menu/implement/AdminMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/menu/implement/ReaderMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/menu/implement/StuffMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/menu/interfaces/IMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userService/ReadUserInfoFromJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userService/UserLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/OverWrite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/fileManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/fileManagementSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ImportFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ImportFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/NewVersion.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,11 +50,31 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Development" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -30,7 +88,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/lmaar/Documents"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Msi/Desktop/FileManagementSystem"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -43,5 +102,16 @@
       <updated>1671356057283</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
