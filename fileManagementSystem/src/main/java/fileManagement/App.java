@@ -7,8 +7,7 @@ import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws IOException {
-       ImportFile.ImportFile();
-        DeleteFile.deleteFile();
-
+      ImportFile.ImportFile();
+       DeleteFile.deleteFile();
     }
 }

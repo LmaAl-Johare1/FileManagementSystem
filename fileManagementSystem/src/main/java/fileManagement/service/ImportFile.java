@@ -25,7 +25,7 @@ public class ImportFile {
         byte[] fileNameBytes = filename.getBytes();
         String encryptedFileName = Base64.getEncoder().encodeToString(fileNameBytes);
         
-        JSONObject obj = new JSONObject();
+       //JSONObject obj = new JSONObject();
         //  the size of the file in bytes
         String fileSize = String.valueOf(Files.size(path));
         file.setFileSize(fileSize);
