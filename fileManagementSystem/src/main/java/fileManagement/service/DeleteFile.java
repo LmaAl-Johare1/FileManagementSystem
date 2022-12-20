@@ -32,9 +32,9 @@ public class DeleteFile {
                 JSONArray innerArray = filesArray.getJSONArray(i);
                 for (int j = 0; j < innerArray.length(); j++) {
                     JSONObject objFile = innerArray.getJSONObject(j);
-                    String fileNameEncy = objFile.getString("fileName");
-                    if(fileName.equals((fileNameEncy))){
-                        filesArray.remove(j);
+                    String fileNameDb = objFile.getString("fileName");
+                    if(fileName.equals((fileNameDb))){
+                        filesArray.remove(i);
                         LOGGER.info("File deleted successfully \n");
                         break;
                     }
