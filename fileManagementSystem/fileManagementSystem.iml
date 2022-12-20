@@ -4,7 +4,6 @@
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <content url="file://$MODULE_DIR$">
@@ -27,5 +26,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:6.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:6.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.10" level="project" />
   </component>
 </module>
