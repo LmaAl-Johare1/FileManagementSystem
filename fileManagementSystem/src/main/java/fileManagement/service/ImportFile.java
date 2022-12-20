@@ -1,14 +1,12 @@
 package fileManagement.service;
-import fileManagement.model.*;
 import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import org.json.*;
 
 public class ImportFile {
     public static final Logger LOGGER = Logger.getLogger(ImportFile.class.getName());
+    public static boolean fileFound = false;
      static JSONObject jsonObject;
     public static StringBuilder fileData = new StringBuilder();
     public static void readJsonFile() {
@@ -18,9 +16,9 @@ public class ImportFile {
         }
         StringBuilder sb = new StringBuilder();
         try (FileReader fr = new FileReader(jsonFile);
-             Scanner sc = new Scanner(fr)) {
-            while (sc.hasNextLine()) {
-                String line = sc.nextLine();
+             Scanner scan = new Scanner(fr)) {
+            while (scan.hasNextLine()) {
+                String line = scan.nextLine();
                 sb.append(line);
             }
             jsonObject = new JSONObject(sb.toString());

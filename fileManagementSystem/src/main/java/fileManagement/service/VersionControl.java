@@ -9,7 +9,6 @@ import java.util.Base64;
 import java.util.Scanner;
 import org.json.*;
 public class VersionControl extends ImportFile{
-    private static boolean fileFound = false;
     public static void versionControl() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n Enter file path you want to  ");
@@ -54,6 +53,7 @@ public class VersionControl extends ImportFile{
         }
             if (!fileFound) {
                 addFile(path, filename, encryptedFileName, fileData.toString(), filesArray, jsonObject, fileSize);
+                LOGGER.info("The file added successfully \n");
             }
             updateJsonData(jsonObject);
             }
@@ -69,7 +69,6 @@ public class VersionControl extends ImportFile{
         ArrayList<FileModel> array = new ArrayList<>();
         array.add(new FileModel(fileModel.getFileNameEncy() + "", fileModel.getFileType() + "", Path.of(fileModel.getPath() + ""), fileModel.getFileSize() + "", fileModel.getFileName() + "", fileModel.getFileData() + ""));
         filesArray.put(array);
-
         try (FileWriter fw = new FileWriter("./files.json")) {
             fw.write(data.toString());
         }
