@@ -1,5 +1,6 @@
 package fileManagement.service;
 import java.io.*;
+import java.util.Base64;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import org.json.*;
@@ -40,12 +41,16 @@ public class GetFile {
             }
             reader.close();
         }
-        public static String getExtension (String filename){
-            int index = filename.lastIndexOf('.');
+        public static String getExtension (String name){
+            int index = name.lastIndexOf('.');
             if (index > 0) {
-                fileExtension = filename.substring(index + 1);
+                fileExtension = name.substring(index + 1);
             }
             return fileExtension;
+        }
+        public static String encryptName(String name){
+            String encryptedFileName=name+"-file";
+            return encryptedFileName;
         }
 }
 
