@@ -26,7 +26,6 @@ public class ImportFile {
             throw new RuntimeException(e);
         }
     }
-
     public static void updateJsonData(JSONObject jsonObject) throws IOException {
         FileWriter fw = new FileWriter("./files.json");
         fw.write(jsonObject.toString());
