@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
-public class DeleteFile {
+public class DeleteFile extends ImportFile {
     private static final Logger LOGGER = Logger.getLogger(DeleteFile.class.getName());
     public static void deleteFile() throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -12,38 +12,24 @@ public class DeleteFile {
         String fileName = scanner.nextLine();
 
         // Read the JSON file and parse it into a Java object
-        File file = new File("./files.json");
-        if (!file.exists()) {
-            LOGGER.warning("Json file doesn't exist \n");
+        readJsonFile();
+        JSONArray filesArray = jsonObject.getJSONArray("files");
+        // Find the index of the file with the specified name
+        for (int i = 0; i < filesArray.length(); i++) {
+            JSONArray innerArray = filesArray.getJSONArray(i);
+            for (int j = 0; j < innerArray.length(); j++) {
+                JSONObject objFile = innerArray.getJSONObject(j);
+                String fileNameDb = objFile.getString("fileName");
+                if(fileName.equals((fileNameDb))){
+                    filesArray.remove(i);
+                    LOGGER.info("File deleted successfully \n");
+                    break;
+                }
+            }
         }
-            StringBuilder sb = new StringBuilder();
-            try (FileReader fr = new FileReader(file);
-                 Scanner scan = new Scanner(fr)) {
-                while (scan.hasNextLine()) {
-                    String line = scan.nextLine();
-                    sb.append(line);
-                }
-            }
-            JSONObject data = new JSONObject(sb.toString());
-            JSONArray filesArray = data.getJSONArray("files");
-
-            // Find the index of the file with the specified name
-            for (int i = 0; i < filesArray.length(); i++) {
-                JSONArray innerArray = filesArray.getJSONArray(i);
-                for (int j = 0; j < innerArray.length(); j++) {
-                    JSONObject objFile = innerArray.getJSONObject(j);
-                    String fileNameDb = objFile.getString("fileName");
-                    if(fileName.equals((fileNameDb))){
-                        filesArray.remove(i);
-                        LOGGER.info("File deleted successfully \n");
-                        break;
-                    }
-                }
-            }
-
-            // Write the modified data back to the file
-            FileWriter fw = new FileWriter("./files.json");
-            fw.write(data.toString());
-            fw.close();
+        if (!fileFound) {
+            LOGGER.warning("The file doesn't exist \n");
+        }
+        updateJsonData(jsonObject);
     }
 }
