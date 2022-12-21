@@ -17,7 +17,7 @@ public class App {
         System.out.println(reader.getUserInfoFromJson());
         UserLogin userLogin=new UserLogin();
         userLogin.logIn(reader);
-        VersionControl.versionControl();
+       // VersionControl.versionControl();
        // DeleteFile.deleteFile();
              //ClassificationByType classificationByType =new ClassificationByType();
         // classificationByType.sortUsersByName();
