@@ -1,4 +1,4 @@
-package fileManagement.service.userType;
+package filemanagement.service.userType;
 
 public class User {
 }

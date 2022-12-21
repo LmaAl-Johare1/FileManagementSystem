@@ -1,9 +1,9 @@
-package fileManagement.service.authenticate;
+package filemanagement.service.authenticate;
 
-import fileManagement.model.UserModel;
-import fileManagement.service.exception.JsonReadingException;
-import fileManagement.service.exception.UserNotFoundException;
-import fileManagement.service.log.logger;
+import filemanagement.model.UserModel;
+import filemanagement.service.exception.JsonReadingException;
+import filemanagement.service.exception.UserNotFoundException;
+import filemanagement.service.log.Logger;
 
 import java.util.List;
 import java.util.Scanner;
@@ -35,23 +35,23 @@ public class UserLogin {
 
                 // compare the entered password with the correct password
                 if (enteredPassword.equals(correctPassword)) {
-                    logger.logInfo("Log-in Into System Successfully");
+                    Logger.logInfo("Log-in Into System Successfully");
                     findUserById.getTypeUserById(id);
                     break;
                 } else {
-                    logger.logWarning(LOGGER_WARNING_MESSAGE);
+                    Logger.logWarning(LOGGER_WARNING_MESSAGE);
                     counter++;
                     if (counter == MAXIMUM_NUMBER_OF_ATTEMPTS) {
-                        logger.logInfo(LOGGER_INFO_MESSAGE);
+                        Logger.logInfo(LOGGER_INFO_MESSAGE);
                         break;
                     }
                 }
 
             } else {
-                logger.logWarning(LOGGER_WARNING_MESSAGE);
+                Logger.logWarning(LOGGER_WARNING_MESSAGE);
                 counter++;
                 if (counter == MAXIMUM_NUMBER_OF_ATTEMPTS) {
-                    logger.logInfo(LOGGER_INFO_MESSAGE);
+                    Logger.logInfo(LOGGER_INFO_MESSAGE);
                     break;
                 }
             }

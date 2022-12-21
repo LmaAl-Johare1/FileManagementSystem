@@ -1,10 +1,10 @@
-package fileManagement.service.authenticate;
+package filemanagement.service.authenticate;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import fileManagement.model.UserModel;
+import filemanagement.model.UserModel;
 
-import fileManagement.service.exception.JsonReadingException;
+import filemanagement.service.exception.JsonReadingException;
 
 import java.io.File;
 import java.io.IOException;

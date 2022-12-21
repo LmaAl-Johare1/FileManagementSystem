@@ -1,8 +1,8 @@
-package fileManagement.service.userType;
+package filemanagement.service.userType;
 
-import fileManagement.service.log.logger;
-import fileManagement.service.menu.IMenu;
-import fileManagement.service.userType.User;
+import filemanagement.service.log.Logger;
+import filemanagement.service.menu.IMenu;
+
 import java.util.Scanner;
 
 public class Admin extends User implements IMenu {
@@ -59,7 +59,7 @@ public class Admin extends User implements IMenu {
                 // Create new file
                 break;
             default:
-            logger.logError("Invalid option selected.");
+            Logger.logError("Invalid option selected.");
                 break;
         }
     }

@@ -1,4 +1,4 @@
-package fileManagement.model;
+package filemanagement.model;
 import java.nio.file.Path;
 
 public class FileModel {
