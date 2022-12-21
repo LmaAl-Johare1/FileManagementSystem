@@ -17,7 +17,7 @@ public class VersionControl extends GetFile {
     public static void versionControl() throws IOException, JsonReadingException {
         int version = 1;
         Scanner scanner = new Scanner(System.in);
-        Logger.logInfo("\n Enter file path you want to add:");
+        Logger.logInfo("Enter file path you want to add:");
         String filePath = scanner.nextLine();
         // Read the JSON file and parse it into a Java object
         readJsonFile();
