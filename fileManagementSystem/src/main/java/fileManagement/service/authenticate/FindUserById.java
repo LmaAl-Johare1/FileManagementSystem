@@ -1,6 +1,7 @@
 package filemanagement.service.authenticate;
 
 import filemanagement.model.UserModel;
+import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UserNotFoundException;
 import filemanagement.service.userType.Admin;
 import filemanagement.service.userType.Reader;
@@ -39,7 +40,7 @@ public class FindUserById {
         return firstNumber;
     }
 
-    public void getTypeUserById(String idType){
+    public void getTypeUserById(String idType) throws NoFileException {
         Reader reader = new Reader();
         Admin admin = new Admin();
         Stuff stuff = new Stuff();

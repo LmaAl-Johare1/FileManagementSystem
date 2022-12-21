@@ -22,6 +22,9 @@ public class FileModel {
     public FileModel() {
     }
 
+
+
+
     public String getFileNameEncy() {
         return fileNameEncy;
     }
@@ -60,6 +63,6 @@ public class FileModel {
     }
     @Override
     public String toString() {
-        return " files [FilePath "+ filePath + ", FileNameEncy = " + fileNameEncy + "FileName = "+ fileName +", FileType = " + fileType +", FileType = "+  fileSize +" , FileData = " + fileData+"]";
+        return "Files [FilePath "+ filePath + ", FileNameEncy = " + fileNameEncy + "FileName = "+ fileName +", FileType = " + fileType +", FileType = "+  fileSize +" , FileData = " + fileData+"]";
     }
 }

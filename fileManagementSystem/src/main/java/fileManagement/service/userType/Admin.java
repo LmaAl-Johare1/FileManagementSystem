@@ -1,5 +1,7 @@
 package filemanagement.service.userType;
 
+import filemanagement.service.ReadFile;
+import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Logger;
 import filemanagement.service.menu.IMenu;
 
@@ -7,7 +9,7 @@ import java.util.Scanner;
 
 public class Admin extends User implements IMenu {
     @Override
-    public void displayMenu() {
+    public void displayMenu() throws NoFileException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("=============Admin Menu============");
         System.out.println(" * Read files : 1");
@@ -26,12 +28,13 @@ public class Admin extends User implements IMenu {
     }
 
     @Override
-    public void selectOption(int option) {
+    public void selectOption(int option) throws NoFileException {
         switch (option) {
             case 1:
-                // Read file class
+                ReadFile.PrintFileName();
                 break;
             case 2:
+
                 // Import files with the latest version class
                 break;
             case 3:
