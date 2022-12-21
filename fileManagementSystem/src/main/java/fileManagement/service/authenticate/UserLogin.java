@@ -2,6 +2,7 @@ package filemanagement.service.authenticate;
 
 import filemanagement.model.UserModel;
 import filemanagement.service.exception.JsonReadingException;
+import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UserNotFoundException;
 import filemanagement.service.log.Logger;
 
@@ -15,7 +16,7 @@ public class UserLogin {
 
     public static final String LOGGER_WARNING_MESSAGE = "Log-in Into System Failed";
 
-    public void logIn(ReadUserInfoFromJson reader) throws UserNotFoundException, JsonReadingException {
+    public void logIn(ReadUserInfoFromJson reader) throws UserNotFoundException, JsonReadingException, NoFileException {
         FindUserById findUserById = new FindUserById();
         Scanner scanner = new Scanner(System.in);
         List<UserModel> users = reader.getUserInfoFromJson();
