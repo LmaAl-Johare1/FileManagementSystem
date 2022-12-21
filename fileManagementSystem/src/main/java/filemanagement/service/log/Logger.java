@@ -1,9 +1,9 @@
-package fileManagement.service.log;
+package filemanagement.service.log;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class logger {
+public class Logger {
     private static final String LOG_FILE = "log.txt";
 
     public static void logInfo(String message) {
@@ -21,7 +21,7 @@ public class logger {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("WARNING: " + message);
+        java.util.logging.Logger.getLogger("WARNING: " + message);
     }
     public static void logError(String message) {
         try (FileWriter writer = new FileWriter(LOG_FILE, true)) {

@@ -1,4 +1,4 @@
-package fileManagement.service.exception;
+package filemanagement.service.exception;
 
 public class UserNotFoundException extends Exception {
     public UserNotFoundException(int id) {

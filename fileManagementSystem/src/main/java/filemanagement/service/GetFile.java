@@ -1,21 +1,20 @@
-package fileManagement.service;
+package filemanagement.service;
 import java.io.*;
-import java.util.Base64;
 import java.util.Scanner;
-import java.util.logging.Logger;
+import filemanagement.service.exception.JsonReadingException;
+import filemanagement.service.exception.NoFileException;
 import org.json.*;
 
 public class GetFile {
-    public static final Logger LOGGER = Logger.getLogger(GetFile.class.getName());
     public static boolean fileFound = false;
      static JSONObject jsonObject;
     static String line;
     public static String fileExtension = null;
     public static StringBuilder fileData = new StringBuilder();
-        public static void readJsonFile () {
+        public static void readJsonFile () throws NoFileException {
             File jsonFile = new File("./files.json");
             if (!jsonFile.exists()) {
-                LOGGER.warning("Json file doesn't exist \n");
+                throw new NoFileException();
             }
             StringBuilder sb = new StringBuilder();
             try (FileReader fr = new FileReader(jsonFile);
@@ -29,17 +28,27 @@ public class GetFile {
                 throw new RuntimeException(e);
             }
         }
-        public static void updateJsonData (JSONObject jsonObject) throws IOException {
-            FileWriter fw = new FileWriter("./files.json");
-            fw.write(jsonObject.toString());
-            fw.close();
+        public static void updateJsonData (JSONObject jsonObject) throws JsonReadingException {
+            try {
+                FileWriter fw = new FileWriter("./files.json");
+                fw.write(jsonObject.toString());
+                fw.close();
+            }
+            catch (IOException e) {
+                throw new JsonReadingException(e.getMessage());
+            }
         }
-        static void readFileData (String filePath) throws IOException {
+        static void readFileData (String filePath) throws NoFileException {
+            try{
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
             while ((line = reader.readLine()) != null) {
                 fileData.append(line);
             }
             reader.close();
+            }
+            catch (IOException e) {
+                throw new NoFileException();
+            }
         }
         public static String getExtension (String name){
             int index = name.lastIndexOf('.');

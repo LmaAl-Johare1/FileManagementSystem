@@ -1,4 +1,4 @@
-package fileManagement.model;
+package filemanagement.model;
 
 public class UserModel {
     private String name;

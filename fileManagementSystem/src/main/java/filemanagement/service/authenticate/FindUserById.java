@@ -1,10 +1,10 @@
-package fileManagement.service.authenticate;
+package filemanagement.service.authenticate;
 
-import fileManagement.model.UserModel;
-import fileManagement.service.exception.UserNotFoundException;
-import fileManagement.service.userType.Admin;
-import fileManagement.service.userType.Reader;
-import fileManagement.service.userType.Stuff;
+import filemanagement.model.UserModel;
+import filemanagement.service.exception.UserNotFoundException;
+import filemanagement.service.userType.Admin;
+import filemanagement.service.userType.Reader;
+import filemanagement.service.userType.Stuff;
 import java.util.List;
 import java.util.Objects;
 

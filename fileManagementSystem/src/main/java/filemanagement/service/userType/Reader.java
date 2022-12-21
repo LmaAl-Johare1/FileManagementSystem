@@ -1,7 +1,7 @@
-package fileManagement.service.userType;
+package filemanagement.service.userType;
 
-import fileManagement.service.log.logger;
-import fileManagement.service.menu.IMenu;
+import filemanagement.service.log.Logger;
+import filemanagement.service.menu.IMenu;
 
 import java.util.Scanner;
 
@@ -38,7 +38,7 @@ public class Reader extends User implements IMenu {
                 // Classify files by Custom category
                 break;
             default:
-                logger.logError("Invalid option selected.");
+                Logger.logError("Invalid option selected.");
                 break;
         }
     }

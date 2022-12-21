@@ -1,25 +1,32 @@
-package fileManagement.service;
-import fileManagement.model.*;
+package filemanagement.service;
+import filemanagement.model.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.Scanner;
+
+import filemanagement.service.exception.JsonReadingException;
+import filemanagement.service.exception.NoFileException;
+import filemanagement.service.exception.UnableToReadFile;
+import filemanagement.service.log.Logger;
 import org.json.*;
 public class VersionControl extends GetFile {
 
-    public static void versionControl() throws IOException {
+    public static void versionControl() throws IOException, JsonReadingException {
         int version = 1;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("\n Enter file path you want to add: ");
+        Logger.logInfo("\n Enter file path you want to add:");
         String filePath = scanner.nextLine();
         // Read the JSON file and parse it into a Java object
         readJsonFile();
-
         JSONArray filesArray = jsonObject.getJSONArray("files");
         Path path = Paths.get(filePath);
+        boolean exists = Files.exists(path);
+        if(!exists){
+            throw new NoFileException();
+        }
         String fileSize = String.valueOf(Files.size(path));
         String nameWithType = String.valueOf(path.getFileName());
         String filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
@@ -37,14 +44,14 @@ public class VersionControl extends GetFile {
                 if (filename.equals((fileNameDb)) && fileTypeDb.equals(fileExt)) {
                     version++;
                     Scanner toReplace = new Scanner(System.in);
-                    System.out.print("\n Disabled Version control? (yes/no)");
+                    Logger.logInfo("\n Disabled Version control? (yes/no)");
                     String replace = toReplace.nextLine().toLowerCase();
                     if (replace.equals("yes")) {
                         objFile.put("path", path);
                         objFile.put("fileSize", fileSize);
                         objFile.put("fileData", fileData.toString());
                         fileFound = true;
-                        LOGGER.info("The file overwrite done successfully \n");
+                        Logger.logInfo("The file overwrite done successfully \n");
                         break;
                     } else if(replace.equals("no")){
                         String incrementedFilename=filename+version;
@@ -52,19 +59,19 @@ public class VersionControl extends GetFile {
                         addFile(path, incrementedFilename,nameWithType, encryptedNewVersion, fileData.toString(), filesArray, jsonObject, fileSize);
                         return;
                     }
-                    LOGGER.warning("wrong operation \n");
+                    Logger.logError("wrong operation \n");
                 }
             }
         }
             if (!fileFound) {
                 addFile(path, filename,nameWithType, encryptedFileName, fileData.toString(), filesArray, jsonObject, fileSize);
-                LOGGER.info("The file added successfully \n");
+                Logger.logInfo("The file added successfully \n");
             }
             updateJsonData(jsonObject);
             }
 
-    private static void addFile(Path path, String filename,String name, String encryptedFileName, String fileData, JSONArray filesArray, JSONObject data, String fileSize ) throws IOException {
-        FileModel fileModel = new FileModel(); //from file model
+    private static void addFile(Path path,String filename,String name, String encryptedFileName, String fileData, JSONArray filesArray, JSONObject data, String fileSize ) throws UnableToReadFile {
+        FileModel fileModel = new FileModel();
         fileModel.setPath(path);
         fileModel.setFileName(filename);
         fileModel.setFileNameEncy(encryptedFileName);
@@ -76,6 +83,9 @@ public class VersionControl extends GetFile {
         filesArray.put(array);
         try (FileWriter fw = new FileWriter("./files.json")) {
             fw.write(data.toString());
+        }
+        catch (IOException e) {
+            throw new UnableToReadFile();
         }
     }
 }

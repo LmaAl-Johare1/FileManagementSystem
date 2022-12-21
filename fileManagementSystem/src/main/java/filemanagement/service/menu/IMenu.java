@@ -1,4 +1,4 @@
-package fileManagement.service.menu;
+package filemanagement.service.menu;
 
 public interface IMenu {
     void displayMenu();
