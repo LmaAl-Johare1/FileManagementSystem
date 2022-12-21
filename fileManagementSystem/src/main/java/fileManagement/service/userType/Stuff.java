@@ -9,9 +9,9 @@ public class Stuff extends User implements IMenu {
     @Override
     public void displayMenu() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("=============MENU============");
+        System.out.println("=============Stuff Menu============");
         System.out.println(" * Read files : 1");
-        System.out.println(" * Import files with the latest version : 2");
+        System.out.println(" * Import files : 2");
         System.out.println(" * Export files : 3");
         System.out.println(" * Classify files by :");
         System.out.println("    > Type : 4 ");
