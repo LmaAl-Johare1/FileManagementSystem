@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+WARNING: Log-in Into System Failed
+WARNING: Log-in Into System Failed
+INFOLog-in Into System Successfully
+=======
 INFO
  Enter file path you want to add:
 INFOEnter file path you want to add:
 INFOEnter file path you want to add:
 INFOEnter file path you want to add:
 INFOEnter file path you want to add:
+>>>>>>> b5091d5ef74e2f7f1b17459dedfae0307e1e5bd0
