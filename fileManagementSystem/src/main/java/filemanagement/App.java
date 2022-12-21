@@ -11,10 +11,11 @@ import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws JsonReadingException, UserNotFoundException, IOException {
-        ReadUserInfoFromJson reader = new ReadUserInfoFromJson();
+        /*ReadUserInfoFromJson reader = new ReadUserInfoFromJson();
         System.out.println(reader.getUserInfoFromJson());
         UserLogin userLogin=new UserLogin();
-        userLogin.logIn(reader);
+        userLogin.logIn(reader);*/
+        VersionControl.versionControl();
 
         //ClassificationByType classificationByType =new ClassificationByType();
         // classificationByType.sortUsersByName();
