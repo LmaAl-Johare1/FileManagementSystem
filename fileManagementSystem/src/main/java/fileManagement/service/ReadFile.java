@@ -14,8 +14,8 @@ import java.io.IOException;
 
 
 public class ReadFile {
-    public static void PrintFileName()  {
-
+    public static void PrintFileName() throws NoFileException {
+        try {
             FileReader reader = new FileReader("C:\\Users\\lmaar\\OneDrive\\Desktop\\FileManagement\\fileManagementSystem\\files.json");
             JSONTokener jsonString = new JSONTokener(reader);
 
@@ -31,6 +31,8 @@ public class ReadFile {
                     System.out.println("File number " + fileCount + " " + "is " + " " + fileName);
                 }
             }
-
+        } catch (IOException e) {
+            throw new NoFileException();
+        }
     }
 }
