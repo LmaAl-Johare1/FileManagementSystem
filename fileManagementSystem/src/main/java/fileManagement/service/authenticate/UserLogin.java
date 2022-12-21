@@ -35,8 +35,8 @@ public class UserLogin {
 
                 // compare the entered password with the correct password
                 if (enteredPassword.equals(correctPassword)) {
-                    {logger.logInfo("Log-in Into System Successfully");
-                    findUserById.getTypeUserById(Integer.parseInt(id), users);}
+                    logger.logInfo("Log-in Into System Successfully");
+                    findUserById.getTypeUserById(id);
                     break;
                 } else {
                     logger.logWarning(LOGGER_WARNING_MESSAGE);

@@ -5,44 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="142a2549-1816-47ab-a77c-b8ed0b093078" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_14_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_14_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_14_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_10_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_10_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20220924.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_3_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_3_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_6_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_6_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_6_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_6_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_6_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_6_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/model/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/authenticate/FindUserById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/authenticate/ReadUserInfoFromJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/authenticate/UserLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/exception/JsonReadingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/exception/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/log/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/menu/IMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/Reader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/Stuff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/userData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/ClassificationByType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/fileManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/fileManagementSystem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/authenticate/FindUserById.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/authenticate/FindUserById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/authenticate/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/authenticate/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/Stuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/fileManagement/service/userType/Stuff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ExportFile.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,18 +52,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Msi/.m2/repository/org/springframework/spring-context/6.0.2",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Msi/.m2/repository/org/springframework/spring-context/6.0.2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

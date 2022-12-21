@@ -26,29 +26,55 @@ public class FindUserById {
         }
         throw new UserNotFoundException(id);
     }
+    public String getTypeFromId(String id) {
+        char[] chars =id.toCharArray();
+        char firstDigit = ' ';
+        for (char c : chars) {
+            if (Character.isDigit(c)) {
+                firstDigit = c;
+                break;
+            }
+        }
+        String firstNumber = Character.toString(firstDigit);
+        return firstNumber;
+    }
 
-    public void getTypeUserById(int id, List<UserModel> users){
+    public void getTypeUserById(String idType){
         Reader reader = new Reader();
         Admin admin = new Admin();
         Stuff stuff = new Stuff();
-        for (UserModel user : users) {
-            char firstNumber = Integer.toString(user.getId()).charAt(0);
-            switch (firstNumber) {
-                case '1':
-                    System.out.println(firstNumber);
+        String type = getTypeFromId(idType);
+            switch (type) {
+                case "1":
+                    System.out.println(idType);
                     reader.displayMenu();
                     break;
-                case '2':
-                    System.out.println(firstNumber);
+                case "2":
+                    System.out.println(idType);
                     stuff.displayMenu();
                     break;
-                case '3':
-                    System.out.println(firstNumber);
+                case "3":
+                    System.out.println(idType);
                     admin.displayMenu();
                     break;
             }
         }
 
+
     }
 
+/*
+public String getTypeFromId() {
+String id = "123456";
+char[] chars = id.toCharArray();
+char firstDigit = ' ';
+for (char c : chars) {
+    if (Character.isDigit(c)) {
+        firstDigit = c;
+        break;
+    }
 }
+String firstNumber = Character.toString(firstDigit);
+return firstNumber;
+}
+ */
