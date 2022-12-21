@@ -17,7 +17,7 @@ public class ReadUserInfoFromJson {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         try {
-            root = mapper.readTree(new File("fileManagementSystem/userData.json"));
+            root = mapper.readTree(new File("C:\\Users\\lmaar\\OneDrive\\Desktop\\FileManagement\\fileManagementSystem\\userData.json"));
         } catch (IOException e) {
             throw new JsonReadingException(e.getMessage());
         }
