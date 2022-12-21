@@ -4,13 +4,14 @@
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
+<<<<<<< HEAD
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <content url="file://$MODULE_DIR$">
+=======
+>>>>>>> 1f74b442cfdc19ac81ecbcb2d6f9b0bb9c5c4458
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
