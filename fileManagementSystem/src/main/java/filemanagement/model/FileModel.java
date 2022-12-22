@@ -21,10 +21,6 @@ public class FileModel {
     }
     public FileModel() {
     }
-
-
-
-
     public String getFileNameEncy() {
         return fileNameEncy;
     }
