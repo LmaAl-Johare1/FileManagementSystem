@@ -1,22 +1,16 @@
 package filemanagement.service;
 
-
 import filemanagement.service.exception.NoFileException;
-import filemanagement.service.exception.UnableToReadFile;
 import filemanagement.service.log.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-
-
 public class ReadFile {
-
     public static void PrintFileName() throws NoFileException {
         try {
             FileReader reader = new FileReader("C:\\Users\\lmaar\\OneDrive\\Desktop\\FileManagement\\fileManagementSystem\\files.json");
@@ -74,7 +68,7 @@ public class ReadFile {
                             if (fileData == null || fileData.isEmpty()) {
                                 Logger.logWarning("The file you selected is empty");
                             } else {
-                                System.out.println("The data for file " + fileName + " is: " + fileData);
+                                System.out.println("The data for file " + fileName + " is: " + '\n'+ fileData);
                             }
                             return;
                         }

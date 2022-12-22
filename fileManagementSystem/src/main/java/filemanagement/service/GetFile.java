@@ -59,8 +59,7 @@ public class GetFile {
             return fileExtension;
         }
         public static String encryptName(String name){
-            String encryptedFileName=name+"-file";
-            return encryptedFileName;
+            return name +"-file";
         }
 }
 

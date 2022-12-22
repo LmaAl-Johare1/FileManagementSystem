@@ -17,10 +17,10 @@ public class App {
         System.out.println(reader.getUserInfoFromJson());
         UserLogin userLogin=new UserLogin();
         userLogin.logIn(reader);
-      //  ReadFile.PrintFileName();
-       // ReadFile.printFileData();
-     // VersionControl.versionControl();
-      // DeleteFile.deleteFile();
+     //   ReadFile.PrintFileName();
+     //  ReadFile.printFileData();
+    // VersionControl.versionControl();
+     // DeleteFile.deleteFile();
 
 
              //ClassificationByType classificationByType =new ClassificationByType();
