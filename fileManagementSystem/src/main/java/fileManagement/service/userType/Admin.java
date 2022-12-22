@@ -1,15 +1,18 @@
 package filemanagement.service.userType;
 
+import filemanagement.service.DeleteFile;
 import filemanagement.service.ReadFile;
+import filemanagement.service.exception.JsonReadingException;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Logger;
 import filemanagement.service.menu.IMenu;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Admin extends User implements IMenu {
     @Override
-    public void displayMenu() throws NoFileException {
+    public void displayMenu() throws IOException, JsonReadingException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("=============Admin Menu============");
         System.out.println(" * Read files : 1");
@@ -28,10 +31,11 @@ public class Admin extends User implements IMenu {
     }
 
     @Override
-    public void selectOption(int option) throws NoFileException {
+    public void selectOption(int option) throws IOException, JsonReadingException {
         switch (option) {
             case 1:
                 ReadFile.PrintFileName();
+                ReadFile.printFileData();
                 break;
             case 2:
 
@@ -44,7 +48,7 @@ public class Admin extends User implements IMenu {
                 // Export files
                 break;
             case 5:
-                // Delete files
+                //delete
                 break;
             case 6:
                 // Classify files by Type

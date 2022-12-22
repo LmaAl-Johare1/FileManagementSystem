@@ -1,25 +1,3 @@
-WARNING: Log-in Into System Failed
-WARNING: Log-in Into System Failed
-INFOLog-in Into System Successfully
-INFOEnter file path you want to add:
-INFOEnter file path you want to add:
-INFOEnter file path you want to add:
-INFOEnter file path you want to add:
-INFOEnter file path you want to add:
-INFOEnter file path you want to add:
-INFOLog-in Into System Successfully
-INFOLog-in Into System Successfully
-INFOEnter file path you want to add:
-INFO
- Enter file name you want to delete (ex:file.txt): 
-ERROR: The file doesn't exist 
-
-ERROR: The file doesn't exist 
-
-INFO
- Enter file name you want to delete (ex:file.txt): 
-INFOFile deleted successfully 
-
 INFO
  Enter file name you want to delete (ex:file.txt): 
 INFOFile deleted successfully 
@@ -30,14 +8,19 @@ WARNING: No File in the system
 
 WARNING: No File in the system 
 
-INFOLog-in Into System Successfully
-WARNING: No File in the system 
-
-WARNING: Log-in Into System Failed
-INFOLog-in Into System Successfully
 WARNING: No File in the system 
 
 INFOEnter file path you want to add:
 INFOThe file added successfully 
 
-INFOLog-in Into System Successfully
+WARNING: No File in the system 
+
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+ERROR: wrong operation 
+
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:

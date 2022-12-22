@@ -6,6 +6,7 @@ import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UserNotFoundException;
 import filemanagement.service.log.Logger;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class UserLogin {
 
     public static final String LOGGER_WARNING_MESSAGE = "Log-in Into System Failed";
 
-    public void logIn(ReadUserInfoFromJson reader) throws UserNotFoundException, JsonReadingException, NoFileException {
+    public void logIn(ReadUserInfoFromJson reader) throws UserNotFoundException, JsonReadingException, IOException {
         FindUserById findUserById = new FindUserById();
         Scanner scanner = new Scanner(System.in);
         List<UserModel> users = reader.getUserInfoFromJson();
