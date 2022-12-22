@@ -41,6 +41,7 @@ public class GetFile {
         static void readFileData (String filePath) throws NoFileException {
             try{
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
+
             while ((line = reader.readLine()) != null) {
                 fileData.append(line);
             }

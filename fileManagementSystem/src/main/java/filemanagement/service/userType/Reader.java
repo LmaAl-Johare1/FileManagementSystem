@@ -27,7 +27,9 @@ public class Reader extends User implements IMenu {
     public void selectOption(int option) throws NoFileException {
         switch (option) {
             case 1:
-ReadFile.PrintFileName();                // Read file class
+ReadFile.PrintFileName();
+ReadFile.printFileData();
+// Read file class
                 break;
             case 2:
                 // Classify files by Type

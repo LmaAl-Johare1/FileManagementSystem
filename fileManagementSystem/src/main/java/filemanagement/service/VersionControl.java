@@ -18,7 +18,6 @@ public class VersionControl extends GetFile {
         Scanner scanner = new Scanner(System.in);
         Logger.logInfo("Enter file path you want to add:");
         String filePath = scanner.nextLine();
-        // Read the JSON file and parse it into a Java object
         readJsonFile();
         JSONArray filesArray = jsonObject.getJSONArray("files");
         Path path = Paths.get(filePath);
