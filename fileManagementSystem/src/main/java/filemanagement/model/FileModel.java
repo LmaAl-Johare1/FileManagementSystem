@@ -5,7 +5,6 @@ public class FileModel {
     private Path filePath;
     private String fileNameEncy;
     private String fileName;
-
     private String fileType;
     private String fileSize;
     private String fileData;
