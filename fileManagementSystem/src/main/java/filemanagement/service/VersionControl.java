@@ -33,37 +33,40 @@ public class VersionControl extends GetFile {
         //the data of the file
         readFileData(filePath);
         String replace;
-        if(filesArray.length()==0){
-            addFile(path, filename+version, nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
-            Logger.logInfo("The file added successfully \n");
-        }else {
-            for (int i = 0; i < filesArray.length(); i++) {
-                JSONArray innerArray = filesArray.getJSONArray(i);
-                for (int j = 0; j < innerArray.length(); j++) {
-                    objFile = innerArray.getJSONObject(j);
-                    if (objFile.getString("path").equals(filePath)) {
-                        version++;
+        try {
+            if (filesArray.length() == 0) {
+                addFile(path, filename + version, nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
+                Logger.logInfo("The file added successfully \n");
+            } else {
+                for (int i = 0; i < filesArray.length(); i++) {
+                    JSONArray innerArray = filesArray.getJSONArray(i);
+                    for (int j = 0; j < innerArray.length(); j++) {
+                        objFile = innerArray.getJSONObject(j);
+                        if (objFile.getString("path").equals(filePath)) {
+                            version++;
+                        }
                     }
                 }
-            }
-            Scanner toReplace = new Scanner(System.in);
-            Logger.logInfo("\n Disabled Version control? (yes/no)");
-            replace = toReplace.nextLine().toLowerCase();
-            if (replace.equals("no")) {
-                addFile(path, filename + version, nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
-                Logger.logInfo("The file new version done successfully \n");
+                Scanner toReplace = new Scanner(System.in);
+                Logger.logInfo("\n Disabled Version control? (yes/no)");
+                replace = toReplace.nextLine().toLowerCase();
+                if (replace.equals("no")) {
+                    addFile(path, filename + version, nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
+                    Logger.logInfo("The file new version done successfully \n");
 
-            } else if (replace.equals("yes")) {
-                objFile.put("path", path);
-                objFile.put("fileSize", fileSize);
-                objFile.put("fileData", fileData.toString());
-                fileFound = true;
-                Logger.logInfo("The file overwrite done successfully \n");
-            } else {
-                Logger.logError("wrong operation \n");
+                } else if (replace.equals("yes")) {
+                    objFile.put("path", path);
+                    objFile.put("fileSize", fileSize);
+                    objFile.put("fileData", fileData.toString());
+                    fileFound = true;
+                    Logger.logInfo("The file overwrite done successfully \n");
+                } else {
+                    Logger.logError("wrong operation \n");
+                }
             }
-        /*
-            updateJsonData(jsonObject);*/
+        }
+        catch (IOException e) {
+            throw new JsonReadingException(e.getMessage());
         }
     }
 
