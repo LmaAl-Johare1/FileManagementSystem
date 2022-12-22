@@ -1,20 +1,15 @@
 package filemanagement.service;
 
-
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-
-
 public class ReadFile {
-
     public static void PrintFileName() throws NoFileException {
         try {
             FileReader reader = new FileReader("C:\\Users\\lmaar\\OneDrive\\Desktop\\FileManagement\\fileManagementSystem\\files.json");
