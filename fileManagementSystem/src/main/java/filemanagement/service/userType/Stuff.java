@@ -1,6 +1,6 @@
 package filemanagement.service.userType;
 
-import filemanagement.service.ReadFiles;
+import filemanagement.service.ReadFile;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Logger;
 import filemanagement.service.menu.IMenu;
@@ -29,8 +29,8 @@ public class Stuff extends User implements IMenu {
     public void selectOption(int option) throws NoFileException {
         switch (option) {
             case 1:
-                ReadFiles.PrintFileName();
-                ReadFiles.printFileData();
+                ReadFile.PrintFileName();
+                ReadFile.printFileData();
                 break;
             case 2:
                 // Import files with the latest version class

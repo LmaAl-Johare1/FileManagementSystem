@@ -1,4 +1,4 @@
-/*package filemanagement.service;
+package filemanagement.service;
 
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Logger;
@@ -27,7 +27,9 @@ public class ReadFile {
                     for (int j = 0; j < innerArray.length(); j++) {
                         JSONObject fileObject = innerArray.getJSONObject(j);
                         String fileName = fileObject.getString("fileName");
-                        System.out.println("File number " + fileCount + " " + "is " + " " + fileName + '\n');
+                        String fileType = fileObject.getString("fileType");
+
+                        System.out.println("File number " + fileCount + " " + "is " + " " + fileName + "." + fileType + '\n');
                     }
                 }
 
@@ -84,6 +86,5 @@ public class ReadFile {
         }
     }
 
-*/
 
 
