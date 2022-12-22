@@ -1,12 +1,430 @@
-<<<<<<< HEAD
 WARNING: Log-in Into System Failed
 WARNING: Log-in Into System Failed
 INFOLog-in Into System Successfully
-=======
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
 INFO
- Enter file path you want to add:
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
 INFOEnter file path you want to add:
 INFOEnter file path you want to add:
 INFOEnter file path you want to add:
 INFOEnter file path you want to add:
->>>>>>> b5091d5ef74e2f7f1b17459dedfae0307e1e5bd0
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+ERROR: wrong operation 
+
+INFO
+ Disabled Version control? (yes/no)
+ERROR: wrong operation 
+
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+ERROR: wrong operation 
+
+ERROR: wrong operation 
+
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+ERROR: wrong operation 
+
+INFOEnter file path you want to add:
+ERROR: wrong operation 
+
+ERROR: wrong operation 
+
+INFOEnter file path you want to add:
+ERROR: wrong operation 
+
+ERROR: wrong operation 
+
+ERROR: wrong operation 
+
+INFOEnter file path you want to add:
+ERROR: wrong operation 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+ERROR: wrong operation 
+
+INFO
+ Disabled Version control? (yes/no)
+ERROR: wrong operation 
+
+INFO
+ Disabled Version control? (yes/no)
+ERROR: wrong operation 
+
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+ERROR: wrong operation 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFO
+ Disabled Version control? (yes/no)
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+ERROR: wrong operation 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFOThe file added successfully 
+
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOEnter file path you want to add:
+INFOEnter file path you want to add:
+INFO
+ Disabled Version control? (yes/no)
+INFOThe file new version done successfully 
+

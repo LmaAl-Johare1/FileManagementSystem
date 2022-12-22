@@ -7,8 +7,6 @@ y
 Isrc/main/java/filemanagement/service/exception/UserNotFoundException.java,2\1\21e02b97de9fe7377c0f06e330d78e21383d0dd9
 d
 4src/main/java/filemanagement/service/log/Logger.java,8\8\88ee7c71d7311e80a74f884afe9c88dec7ab20e4
-d
-4src/main/java/filemanagement/service/DeleteFile.java,d\e\de045498eb57a2fbff651f6e9f289b056630ac04
 s
 Csrc/main/java/filemanagement/service/exception/NoFileException.java,a\f\af630044c1f7d75042589d44bb640eb7ae73dfee
 t
