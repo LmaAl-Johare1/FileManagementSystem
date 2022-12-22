@@ -1,6 +1,6 @@
 package filemanagement.service.userType;
 
-import filemanagement.service.ReadFile;
+import filemanagement.service.ReadFiles;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Logger;
 import filemanagement.service.menu.IMenu;
@@ -27,8 +27,8 @@ public class Reader extends User implements IMenu {
     public void selectOption(int option) throws NoFileException {
         switch (option) {
             case 1:
-ReadFile.PrintFileName();
-ReadFile.printFileData();
+ReadFiles.PrintFileName();
+ReadFiles.printFileData();
 // Read file class
                 break;
             case 2:

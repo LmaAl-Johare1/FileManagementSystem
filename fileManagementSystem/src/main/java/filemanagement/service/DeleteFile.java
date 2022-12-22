@@ -12,7 +12,7 @@ public class DeleteFile extends GetFile {
         if (filesArray.length() == 0) {
             Logger.logWarning("No File in the system \n");
         } else {
-            ReadFile.PrintFileName();
+            ReadFiles.PrintFileName();
 
             Scanner scanner = new Scanner(System.in);
             Logger.logInfo("\n Enter file name you want to delete (ex:file.txt): ");

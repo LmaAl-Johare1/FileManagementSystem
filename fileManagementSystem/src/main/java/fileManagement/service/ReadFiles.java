@@ -1,4 +1,4 @@
-/*package filemanagement.service;
+package filemanagement.service;
 
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Logger;
@@ -10,7 +10,7 @@ import org.json.JSONTokener;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-public class ReadFile {
+public class ReadFiles {
     public static void PrintFileName() throws NoFileException {
         try {
             FileReader reader = new FileReader("C:\\Users\\lmaar\\OneDrive\\Desktop\\FileManagement\\fileManagementSystem\\files.json");
@@ -48,7 +48,7 @@ public class ReadFile {
             JSONObject json = new JSONObject(jsonString);
             JSONArray filesArray = json.getJSONArray("files");
             if (filesArray.length() == 0) {
-                ReadFile.PrintFileName();
+                ReadFiles.PrintFileName();
             } else {
                 System.out.println("Please Enter the File number you want to read : ");
                 Scanner scanner = new Scanner(System.in);
@@ -79,11 +79,11 @@ public class ReadFile {
             }
         }
         catch(IOException e){
-                throw new NoFileException();
-            }
+            throw new NoFileException();
         }
     }
+}
 
-*/
+
 
 
