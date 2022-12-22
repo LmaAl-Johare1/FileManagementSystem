@@ -1,0 +1,9 @@
+
+…
+java:S1488&"cImmediately return this expression instead of assigning it to the temporary variable "firstNumber".(öËìúÿÿÿÿ8şı¸Ó0
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(À÷Şüÿÿÿÿ
+>	java:S131/""Add a default case to this switch.(ÜŸ•8¤ş¸Ó0
+U	java:S1061"9Replace this use of System.out or System.err by a logger.(Áş¾á8¥ş¸Ó0
+U	java:S1065"9Replace this use of System.out or System.err by a logger.(Áş¾á8¦ş¸Ó0
+U	java:S1069"9Replace this use of System.out or System.err by a logger.(Áş¾á8§ş¸Ó0
+]	java:S125C"<This block of commented-out lines of code should be removed.(µªËùúÿÿÿÿ8¨ş¸Ó0
