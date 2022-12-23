@@ -6,7 +6,9 @@ import filemanagement.service.log.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 public class DeleteFile extends GetFile {
-    static boolean removed=false;
+    static boolean removed;
+    static JSONArray innerArray=null;
+
     public static void deleteFile() throws JsonReadingException, NoFileException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n Enter file name you want to delete (ex:file.txt): ");
@@ -20,25 +22,25 @@ public class DeleteFile extends GetFile {
             throw new NoFileException();
         }
         for (int i = 0; i < filesArray.length(); i++) {
-            JSONArray innerArray = filesArray.getJSONArray(i);
+             innerArray = filesArray.getJSONArray(i);
             JSONObject objFile = innerArray.getJSONObject(0);
             String fileNameDb = objFile.getString("fileName");
             String fileTypeDb = objFile.getString("fileType");
-            if ((filename.equals(fileNameDb))&& (getExtension(nameWithType).equals(fileTypeDb)) ) {
-                innerArray.remove(0);
-                isRemoved();
-                Logger.logInfo("File deleted successfully \n");
-                break;
+                if ((filename.equals(fileNameDb))&& (getExtension(nameWithType).equals(fileTypeDb)) ) {
+                    removed=!isRemoved();
+                    break;
+                }
             }
-            }
-        if(!isRemoved()){
-            Logger.logError("File doesn't exist \n");
+        if(removed){
+            innerArray.remove(0);
+            Logger.logInfo("File deleted successfully \n");
+           updateJsonData(jsonObject);
         }
-        updateJsonData(jsonObject);
-    }
+        else
+            Logger.logError("File doesn't exist \n");
 
-    private static boolean isRemoved() {
-         removed = true;
-         return true;
     }
+        private static boolean isRemoved() {
+            return false;
+        }
 }

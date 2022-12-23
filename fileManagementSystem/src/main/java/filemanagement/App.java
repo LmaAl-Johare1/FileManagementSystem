@@ -19,7 +19,7 @@ public class App {
         userLogin.logIn(reader);*/
         //VersionControl.versionControl();
         //RollBack.rollback();
-        DeleteFile.deleteFile();
+        //DeleteFile.deleteFile();
         //ClassificationByType classificationByType =new ClassificationByType();
         //classificationByType.sortUsersByName();
 
