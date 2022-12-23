@@ -10,7 +10,7 @@ import filemanagement.service.log.Loggers;
 import org.json.JSONArray;
 import org.json.JSONObject;
 public class DeleteFile extends GetFile {
-    private static boolean removed=false;
+    private static boolean isRemoved =false;
     private static int index;
     static String fileName;
 
@@ -40,12 +40,12 @@ public class DeleteFile extends GetFile {
                 String fileNameDb = objFile.getString("fileName");
                 String fileTypeDb = objFile.getString("fileType");
                 if ((fileName.equals(fileNameDb)) && (getExtension(nameWithType).equals(fileTypeDb))) {
-                    removed = true;
+                    isRemoved = true;
                     index = i;
                     break;
                 }
             }
-            if (removed) {
+            if (isRemoved) {
                 filesArray.remove(index);
                 Loggers.logInfo("File deleted successfully \n");
                 updateJsonData(jsonObject);

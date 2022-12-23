@@ -17,3 +17,9 @@ x
 Hsrc/main/java/filemanagement/service/exception/JsonReadingException.java,8\8\88ab2d8508dab249d0f232cfb4ca37278ca21601
 s
 Csrc/main/java/filemanagement/service/exception/NoFileException.java,a\f\af630044c1f7d75042589d44bb640eb7ae73dfee
+p
+@src/main/java/filemanagement/service/authenticate/UserLogin.java,7\2\720ca9c6d877f596c7eda178a1e8d9fad40a8bcb
+{
+Ksrc/main/java/filemanagement/service/authenticate/ReadUserInfoFromJson.java,9\b\9bf280a96c893576006568fde18656654c9b8c12
+s
+Csrc/main/java/filemanagement/service/authenticate/FindUserById.java,e\b\ebb2a7fa69854e6e25ced50a3bfc9155de58972b
