@@ -23,3 +23,12 @@ p
 Ksrc/main/java/filemanagement/service/authenticate/ReadUserInfoFromJson.java,9\b\9bf280a96c893576006568fde18656654c9b8c12
 s
 Csrc/main/java/filemanagement/service/authenticate/FindUserById.java,e\b\ebb2a7fa69854e6e25ced50a3bfc9155de58972b
+7
+log.txt,8\9\89dbeb08d7aa865d748d706c1d17ee94f6f82ba7
+:
+
+files.json,d\9\d9d32b98adafe479c76124a85da889cc2a2ad885
+b
+2src/main/java/filemanagement/service/ReadFile.java,c\2\c2a1b20e726b0eea0eb4a6502f8b2b8ce5005a8b
+e
+5src/main/java/filemanagement/service/log/Loggers.java,a\2\a249354711b0cf1f08e9309fe01ff97b7fbba867
