@@ -3,7 +3,7 @@ package filemanagement.service.log;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Logger {
+public class logger {
     private static final String LOG_FILE = "log.txt";
 
     public static void logInfo(String message) {

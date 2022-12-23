@@ -1,5 +1,6 @@
 package filemanagement;
 
+import filemanagement.service.ExportFile;
 import filemanagement.service.ReadFile;
 import filemanagement.service.authenticate.ReadUserInfoFromJson;
 import filemanagement.service.authenticate.UserLogin;
@@ -15,7 +16,8 @@ public class App {
         System.out.println(reader.getUserInfoFromJson());
         UserLogin userLogin=new UserLogin();
         userLogin.logIn(reader);*/
-       ReadFile.PrintFileName();
+       //ReadFile.PrintFileName();
+        ExportFile.exportFile();
      //  ReadFile.printFileData();
     // VersionControl.versionControl();
      // DeleteFile.deleteFile();

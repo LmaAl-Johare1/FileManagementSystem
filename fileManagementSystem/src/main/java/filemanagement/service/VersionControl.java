@@ -10,13 +10,13 @@ import java.util.Scanner;
 import filemanagement.service.exception.JsonReadingException;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UnableToReadFile;
-import filemanagement.service.log.Logger;
+import filemanagement.service.log.logger;
 import org.json.*;
 public class VersionControl extends GetFile {
     private static int version = 0;
     public static void versionControl() throws IOException, JsonReadingException {
         Scanner scanner = new Scanner(System.in);
-        Logger.logInfo("Enter file path you want to add:");
+        logger.logInfo("Enter file path you want to add:");
         String filePath = scanner.nextLine();
         readJsonFile();
         JSONArray filesArray = jsonObject.getJSONArray("files");
@@ -35,7 +35,7 @@ public class VersionControl extends GetFile {
         try {
             if (filesArray.length() == 0) {
                 addFile(path, filename + version, nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
-                Logger.logInfo("The file added successfully \n");
+                logger.logInfo("The file added successfully \n");
             } else {
                 for (int i = 0; i < filesArray.length(); i++) {
                     JSONArray innerArray = filesArray.getJSONArray(i);
@@ -47,20 +47,20 @@ public class VersionControl extends GetFile {
                     }
                 }
                 Scanner toReplace = new Scanner(System.in);
-                Logger.logInfo("\n Disabled Version control? (yes/no)");
+                logger.logInfo("\n Disabled Version control? (yes/no)");
                 replace = toReplace.nextLine().toLowerCase();
                 if (replace.equals("no")) {
                     addFile(path, filename + version, nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
-                    Logger.logInfo("The file new version done successfully \n");
+                    logger.logInfo("The file new version done successfully \n");
 
                 } else if (replace.equals("yes")) {
                     objFile.put("path", path);
                     objFile.put("fileSize", fileSize);
                     objFile.put("fileData", fileData.toString());
                     fileFound = true;
-                    Logger.logInfo("The file overwrite done successfully \n");
+                    logger.logInfo("The file overwrite done successfully \n");
                 } else {
-                    Logger.logError("wrong operation \n");
+                    logger.logError("wrong operation \n");
                 }
             }
         }
