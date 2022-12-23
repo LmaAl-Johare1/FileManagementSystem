@@ -6,12 +6,10 @@ import filemanagement.service.exception.NoFileException;
 import org.json.*;
 
 public class GetFile {
-    public static boolean fileFound = false;
      static JSONObject jsonObject;
     static String line;
-    public static String fileExtension = null;
-    public static StringBuilder fileData = new StringBuilder();
-        public static void readJsonFile () throws NoFileException {
+    protected static StringBuilder fileData = new StringBuilder();
+        public static void readJsonFile () throws NoFileException, JsonReadingException {
             File jsonFile = new File("./files.json");
             if (!jsonFile.exists()) {
                 throw new NoFileException();
@@ -25,7 +23,7 @@ public class GetFile {
                 }
                 jsonObject = new JSONObject(sb.toString());
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                throw new JsonReadingException(e.getMessage());
             }
         }
         public static void updateJsonData(JSONObject jsonObject) throws JsonReadingException {
@@ -52,8 +50,7 @@ public class GetFile {
             }
         }
         public static String getExtension (String name){
-            String fileType = name.substring(name.lastIndexOf('.') + 1);
-            return  fileType;
+            return name.substring(name.lastIndexOf('.') + 1);
         }
         public static String encryptName(String name){
             return name +"-file";
