@@ -1,12 +1,6 @@
 
-s
-Csrc/main/java/filemanagement/service/authenticate/FindUserById.java,e\b\ebb2a7fa69854e6e25ced50a3bfc9155de58972b
 n
 >src/main/java/filemanagement/service/ClassificationByType.java,7\b\7b95267c2cc16a032884f0c82957faddde1b9005
-p
-@src/main/java/filemanagement/service/authenticate/UserLogin.java,7\2\720ca9c6d877f596c7eda178a1e8d9fad40a8bcb
-{
-Ksrc/main/java/filemanagement/service/authenticate/ReadUserInfoFromJson.java,9\b\9bf280a96c893576006568fde18656654c9b8c12
 a
 1src/main/java/filemanagement/model/UserModel.java,6\4\64750aff725a1dda1b0f550eb1b9e5b081367ff7
 y
@@ -19,11 +13,7 @@ t
 Dsrc/main/java/filemanagement/service/exception/UnableToReadFile.java,4\0\402f015153d09af0d018552a00bc2cd47f306bc1
 a
 1src/main/java/filemanagement/model/FileModel.java,a\4\a4cf5c6360f85bc72af58635f13d10f3b9c63095
-a
-1src/main/java/filemanagement/service/GetFile.java,1\1\1193aea8c8fd47dd9dddfc2105cf92ae8f3f1ab8
 x
 Hsrc/main/java/filemanagement/service/exception/JsonReadingException.java,8\8\88ab2d8508dab249d0f232cfb4ca37278ca21601
 s
 Csrc/main/java/filemanagement/service/exception/NoFileException.java,a\f\af630044c1f7d75042589d44bb640eb7ae73dfee
-d
-4src/main/java/filemanagement/service/DeleteFile.java,d\e\de045498eb57a2fbff651f6e9f289b056630ac04

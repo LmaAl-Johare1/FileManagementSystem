@@ -1,15 +1,17 @@
 package filemanagement.service;
+
 import java.util.Scanner;
+
 import filemanagement.service.exception.JsonReadingException;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Loggers;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 public class DeleteFile extends GetFile {
-    static boolean removed;
-    static JSONArray innerArray=null;
-    static int index;
-    static String filename;
+    private static boolean removed=false;
+    private static int index;
+    static String fileName;
 
     public static void deleteFile() throws JsonReadingException, NoFileException {
         readJsonFile();
@@ -18,8 +20,9 @@ public class DeleteFile extends GetFile {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n Enter file name you want to delete (ex:file.txt): ");
         String nameWithType = scanner.nextLine();
+
         try {
-            String filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
+             fileName = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
         } catch (Exception e) {
             throw new NoFileException();
         }
@@ -30,12 +33,12 @@ public class DeleteFile extends GetFile {
         }
         else {
             for (int i = 0; i < filesArray.length(); i++) {
-                innerArray = filesArray.getJSONArray(i);
+                JSONArray innerArray = filesArray.getJSONArray(i);
                 JSONObject objFile = innerArray.getJSONObject(0);
                 String fileNameDb = objFile.getString("fileName");
                 String fileTypeDb = objFile.getString("fileType");
-                if ((filename.equals(fileNameDb)) && (getExtension(nameWithType).equals(fileTypeDb))) {
-                    removed = false;
+                if ((fileName.equals(fileNameDb)) && (getExtension(nameWithType).equals(fileTypeDb))) {
+                    removed = true;
                     index = i;
                     break;
                 }

@@ -8,15 +8,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import filemanagement.service.exception.FileSizeException;
+import filemanagement.service.exception.JsonReadingException;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UnableToReadFile;
 import filemanagement.service.log.Loggers;
 import org.json.*;
 public class VersionControl extends GetFile {
     private static int version = 0;
-    private static String fileSize;
+    static JSONObject objFile = new JSONObject();
+    private static boolean fileFound = false;
 
-    public static void versionControl() throws FileSizeException, NoFileException, UnableToReadFile {
+    public static void versionControl() throws FileSizeException, NoFileException, UnableToReadFile, JsonReadingException {
+        String fileSize;
+
         readJsonFile();
         JSONArray filesArray = jsonObject.getJSONArray("files");
 
@@ -36,7 +40,6 @@ public class VersionControl extends GetFile {
 
         String nameWithType = String.valueOf(path.getFileName());
         String filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
-        JSONObject objFile = null;
         //the data of the file
         readFileData(filePath);
         String replace;
