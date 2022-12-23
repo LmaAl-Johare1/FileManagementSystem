@@ -66,7 +66,7 @@ public class ReadFile {
                     for (int j = 0; j < innerArray.length(); j++) {
                         JSONObject fileObject = innerArray.getJSONObject(j);
                         String fileName = fileObject.getString("fileName");
-                         fileData = fileObject.getString("fileData");
+                         fileData = fileObject.getString("fileData.json");
 
                         if (fileNumber == fileCount) {
                             if (fileData == null || fileData.isEmpty()) {

@@ -72,7 +72,7 @@ public class VersionControl extends GetFile {
             } else if (replace.equals("yes")) {
                 objFile.put("path", path);
                 objFile.put("fileSize", fileSize);
-                objFile.put("fileData", fileData.toString());
+                objFile.put("fileData.json", fileData.toString());
                 fileFound = true;
                 Loggers.logInfo("The file overwrite done successfully \n");
             } else {
