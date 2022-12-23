@@ -1,7 +1,7 @@
 package filemanagement.service;
 
 import filemanagement.service.exception.NoFileException;
-import filemanagement.service.log.Logger;
+import filemanagement.service.log.Loggers;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -18,7 +18,7 @@ public class ReadFile {
             JSONObject json = new JSONObject(jsonString);
             JSONArray filesArray = json.getJSONArray("files");
             if (filesArray.length() == 0) {
-                Logger.logWarning("No File in the system \n");
+                Loggers.logWarning("No File in the system \n");
             } else {
                 System.out.println("List of File in the system : ");
                 for (int i = 0; i < filesArray.length(); i++) {
@@ -56,7 +56,7 @@ public class ReadFile {
                 Scanner scanner = new Scanner(System.in);
                 int fileNumber = scanner.nextInt();
                 if (fileNumber < 1 || fileNumber > filesArray.length()) {
-                    Logger.logWarning("No File in the system \n");
+                    Loggers.logWarning("No File in the system \n");
                 }
                 int fileCount = 1;
                 for (int i = 0; i < filesArray.length(); i++) {
@@ -68,7 +68,7 @@ public class ReadFile {
 
                         if (fileNumber == fileCount) {
                             if (fileData == null || fileData.isEmpty()) {
-                                Logger.logWarning("The file you selected is empty");
+                                Loggers.logWarning("The file you selected is empty");
                             } else {
                                 System.out.println("The data for file " + fileName + " is: " + '\n'+ fileData);
                             }

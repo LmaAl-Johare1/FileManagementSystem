@@ -2,7 +2,7 @@ package filemanagement.service;
 import java.util.Scanner;
 import filemanagement.service.exception.JsonReadingException;
 import filemanagement.service.exception.NoFileException;
-import filemanagement.service.log.Logger;
+import filemanagement.service.log.Loggers;
 import org.json.JSONArray;
 import org.json.JSONObject;
 public class DeleteFile extends GetFile {
@@ -42,7 +42,7 @@ public class DeleteFile extends GetFile {
             }
             if (removed) {
                 filesArray.remove(index);
-                Logger.logInfo("File deleted successfully \n");
+                Loggers.logInfo("File deleted successfully \n");
                 updateJsonData(jsonObject);
             } else {
                 throw new NoFileException();

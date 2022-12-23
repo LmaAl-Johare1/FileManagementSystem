@@ -2,7 +2,7 @@ package filemanagement.service.userType;
 
 import filemanagement.service.ReadFile;
 import filemanagement.service.exception.NoFileException;
-import filemanagement.service.log.Logger;
+import filemanagement.service.log.Loggers;
 import filemanagement.service.menu.IMenu;
 
 import java.util.Scanner;
@@ -41,7 +41,7 @@ ReadFile.printFileData();
                 // Classify files by Custom category
                 break;
             default:
-                Logger.logError("Invalid option selected.");
+                Loggers.logError("Invalid option selected.");
                 break;
         }
     }
