@@ -10,7 +10,7 @@ import java.util.Scanner;
 import filemanagement.service.exception.FileSizeException;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UnableToReadFile;
-import filemanagement.service.log.Logger;
+import filemanagement.service.log.Loggers;
 import org.json.*;
 public class VersionControl extends GetFile {
     private static int version = 0;
@@ -54,23 +54,23 @@ public class VersionControl extends GetFile {
         }
         if (!fileFound) {
             addFile(path, filename+"("+version+")", nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
-            Logger.logInfo("The file added successfully \n");
+            Loggers.logInfo("The file added successfully \n");
         } else {
             Scanner toReplace = new Scanner(System.in);
             System.out.print(" Disabled Version control? (yes/no)");
             replace = toReplace.nextLine().toLowerCase();
             if (replace.equals("no")) {
                 addFile(path, filename +"("+version+")", nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
-                Logger.logInfo("The file new version done successfully \n");
+                Loggers.logInfo("The file new version done successfully \n");
 
             } else if (replace.equals("yes")) {
                 objFile.put("path", path);
                 objFile.put("fileSize", fileSize);
                 objFile.put("fileData", fileData.toString());
                 fileFound = true;
-                Logger.logInfo("The file overwrite done successfully \n");
+                Loggers.logInfo("The file overwrite done successfully \n");
             } else {
-                Logger.logError("wrong operation \n");
+                Loggers.logError("wrong operation \n");
             }
         }
     }

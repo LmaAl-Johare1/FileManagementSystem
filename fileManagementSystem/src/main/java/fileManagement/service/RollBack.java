@@ -2,7 +2,7 @@ package filemanagement.service;
 
 import filemanagement.service.exception.JsonReadingException;
 import filemanagement.service.exception.NoFileException;
-import filemanagement.service.log.Logger;
+import filemanagement.service.log.Loggers;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -51,7 +51,7 @@ public class RollBack {
                     if (fileNameDb.startsWith(filename) && fileType.equals(fileTypeDb) && fileNameDb.contains("("+maxVersion+")")) {
                         // Remove the file with the highest version from the array
                         filesArray.remove(i);
-                        Logger.logInfo("The file has been rolled back \n");
+                        Loggers.logInfo("The file has been rolled back \n");
                         // Update the JSON file with the updated array
                         updateJsonData(jsonObject);
                     }
