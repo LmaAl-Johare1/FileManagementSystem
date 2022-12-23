@@ -51,11 +51,8 @@ public class GetFile {
             }
         }
         public static String getExtension (String name){
-            int index = name.lastIndexOf('.');
-            if (index > 0) {
-                fileExtension = name.substring(index + 1);
-            }
-            return fileExtension;
+            String fileType = name.substring(name.lastIndexOf('.') + 1);
+            return  fileType;
         }
         public static String encryptName(String name){
             return name +"-file";
