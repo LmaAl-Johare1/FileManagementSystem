@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -19,17 +20,18 @@ public class ReadFile {
             if (filesArray.length() == 0) {
                 Logger.logWarning("No File in the system \n");
             } else {
-                System.out.println("List Of File in the system : ");
+                System.out.println("List of File in the system : ");
                 for (int i = 0; i < filesArray.length(); i++) {
                     int fileCount = i + 1;
                     JSONArray innerArray = filesArray.getJSONArray(i);
                     for (int j = 0; j < innerArray.length(); j++) {
                         JSONObject fileObject = innerArray.getJSONObject(j);
                         String fileName = fileObject.getString("fileName");
-                        System.out.println("File number " + fileCount + " " + "is " + " " + fileName + '\n');
+                        String fileType = fileObject.getString("fileType");
+
+                        System.out.println("File number " + fileCount + " " + "is " + " " + fileName + "." + fileType + '\n');
                     }
                 }
-                ReadFileSelected(filesArray);
 
             }
 
@@ -39,25 +41,50 @@ public class ReadFile {
 
     }
 
-    public static void ReadFileSelected(JSONArray filesArray) {
-        System.out.println("Please Select the file number you want to read : ");
-        Scanner scanner = new Scanner(System.in);
-        int fileNumber = scanner.nextInt();
 
-        // Validate the input to make sure it is a valid file number
-        if (fileNumber < 1 || fileNumber > filesArray.length()) {
-            Logger.logWarning("No File in the system \n");
+    public static void printFileData() throws NoFileException {
+
+        try {
+            FileReader reader = new FileReader("C:\\Users\\lmaar\\OneDrive\\Desktop\\FileManagement\\fileManagementSystem\\files.json");
+            JSONTokener jsonString = new JSONTokener(reader);
+            JSONObject json = new JSONObject(jsonString);
+            JSONArray filesArray = json.getJSONArray("files");
+            if (filesArray.length() == 0) {
+                ReadFile.PrintFileName();
+            } else {
+                System.out.println("Please Enter the File number you want to read : ");
+                Scanner scanner = new Scanner(System.in);
+                int fileNumber = scanner.nextInt();
+                if (fileNumber < 1 || fileNumber > filesArray.length()) {
+                    Logger.logWarning("No File in the system \n");
+                }
+                int fileCount = 1;
+                for (int i = 0; i < filesArray.length(); i++) {
+                    JSONArray innerArray = filesArray.getJSONArray(i);
+                    for (int j = 0; j < innerArray.length(); j++) {
+                        JSONObject fileObject = innerArray.getJSONObject(j);
+                        String fileName = fileObject.getString("fileName");
+                        String fileData = fileObject.getString("fileData");
+
+                        if (fileNumber == fileCount) {
+                            if (fileData == null || fileData.isEmpty()) {
+                                Logger.logWarning("The file you selected is empty");
+                            } else {
+                                System.out.println("The data for file " + fileName + " is: " + '\n'+ fileData);
+                            }
+                            return;
+                        }
+                        fileCount++;
+                    }
+
+                }
+            }
         }
-
-        else
-
-    {
-        JSONArray innerArray = filesArray.getJSONArray(fileNumber - 1);
-        JSONObject fileObject = innerArray.getJSONObject(0);
-        String fileData = fileObject.getString("fileData");
-        System.out.println("The File you selected contain : "+ '\n' + fileData);
-
+        catch(IOException e){
+                throw new NoFileException();
+            }
+        }
     }
-}
-}
+
+
 

@@ -73,7 +73,6 @@ public class VersionControl extends GetFile {
                 Logger.logError("wrong operation \n");
             }
         }
-
     }
 
     private static void addFile(Path path,String filename,String name, String fileData, JSONArray filesArray, JSONObject data, String fileSize ) throws UnableToReadFile {

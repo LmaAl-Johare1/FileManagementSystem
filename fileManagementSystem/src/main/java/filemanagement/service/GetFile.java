@@ -28,7 +28,7 @@ public class GetFile {
                 throw new RuntimeException(e);
             }
         }
-        public static void updateJsonData (JSONObject jsonObject) throws JsonReadingException {
+        public static void updateJsonData(JSONObject jsonObject) throws JsonReadingException {
             try {
                 FileWriter fw = new FileWriter("./files.json");
                 fw.write(jsonObject.toString());
@@ -38,9 +38,10 @@ public class GetFile {
                 throw new JsonReadingException(e.getMessage());
             }
         }
-        static void readFileData (String filePath) throws NoFileException {
+        static void readFileData(String filePath) throws NoFileException {
             try{
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
+
             while ((line = reader.readLine()) != null) {
                 fileData.append(line);
             }

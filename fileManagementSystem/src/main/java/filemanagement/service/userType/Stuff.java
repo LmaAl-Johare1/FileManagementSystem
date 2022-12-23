@@ -30,6 +30,7 @@ public class Stuff extends User implements IMenu {
         switch (option) {
             case 1:
                 ReadFile.PrintFileName();
+                ReadFile.printFileData();
                 break;
             case 2:
                 // Import files with the latest version class

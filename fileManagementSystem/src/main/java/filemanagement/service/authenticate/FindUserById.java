@@ -1,11 +1,14 @@
 package filemanagement.service.authenticate;
 
 import filemanagement.model.UserModel;
+import filemanagement.service.exception.JsonReadingException;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UserNotFoundException;
 import filemanagement.service.userType.Admin;
 import filemanagement.service.userType.Reader;
 import filemanagement.service.userType.Stuff;
+
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,7 +43,7 @@ public class FindUserById {
         return firstNumber;
     }
 
-    public void getTypeUserById(String idType) throws NoFileException {
+    public void getTypeUserById(String idType) throws IOException, JsonReadingException {
         Reader reader = new Reader();
         Admin admin = new Admin();
         Stuff stuff = new Stuff();

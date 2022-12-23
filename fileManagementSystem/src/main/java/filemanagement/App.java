@@ -1,5 +1,4 @@
 package filemanagement;
-
 import filemanagement.service.DeleteFile;
 import filemanagement.service.ReadFile;
 import filemanagement.service.RollBack;
@@ -19,9 +18,10 @@ public class App {
         UserLogin userLogin=new UserLogin();
         userLogin.logIn(reader);*/
         //VersionControl.versionControl();
-        RollBack.rollback();
-        //DeleteFile.deleteFile();
+        //RollBack.rollback();
+        DeleteFile.deleteFile();
         //ClassificationByType classificationByType =new ClassificationByType();
         //classificationByType.sortUsersByName();
+
 }
 }
