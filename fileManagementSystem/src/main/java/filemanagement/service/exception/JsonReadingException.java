@@ -1,6 +1,8 @@
 package filemanagement.service.exception;
 
-public class JsonReadingException extends Exception {
+import java.io.IOException;
+
+public class JsonReadingException extends IOException {
     public JsonReadingException(String message) {
         super(message);
     }
