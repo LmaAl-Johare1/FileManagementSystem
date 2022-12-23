@@ -11,3 +11,17 @@ p
 Ksrc/main/java/filemanagement/service/authenticate/ReadUserInfoFromJson.java,9\b\9bf280a96c893576006568fde18656654c9b8c12
 a
 1src/main/java/filemanagement/model/UserModel.java,6\4\64750aff725a1dda1b0f550eb1b9e5b081367ff7
+y
+Isrc/main/java/filemanagement/service/exception/UserNotFoundException.java,2\1\21e02b97de9fe7377c0f06e330d78e21383d0dd9
+u
+Esrc/main/java/filemanagement/service/exception/FileSizeException.java,d\9\d9c1226c373755abd6945605d4689c8c8eb2e67b
+H
+fileManagementSystem.iml,2\5\257c019515d360b4d99b7f91f4bc00bb084de65a
+t
+Dsrc/main/java/filemanagement/service/exception/UnableToReadFile.java,4\0\402f015153d09af0d018552a00bc2cd47f306bc1
+a
+1src/main/java/filemanagement/model/FileModel.java,a\4\a4cf5c6360f85bc72af58635f13d10f3b9c63095
+a
+1src/main/java/filemanagement/service/GetFile.java,1\1\1193aea8c8fd47dd9dddfc2105cf92ae8f3f1ab8
+x
+Hsrc/main/java/filemanagement/service/exception/JsonReadingException.java,8\8\88ab2d8508dab249d0f232cfb4ca37278ca21601
