@@ -3,7 +3,10 @@ package filemanagement.service.log;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class logger {
+
+import java.util.logging.*;
+public class Loggers {
+    public static final Logger logger = Logger.getLogger(Loggers.class.getName());
     private static final String LOG_FILE = "log.txt";
 
     public static void logInfo(String message) {
@@ -12,7 +15,7 @@ public class logger {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("INFO: " + message);
+        logger.info( message);
     }
 
     public static void logWarning(String message) {
@@ -21,7 +24,7 @@ public class logger {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        java.util.logging.Logger.getLogger("WARNING: " + message);
+        logger.warning( message);
     }
     public static void logError(String message) {
         try (FileWriter writer = new FileWriter(LOG_FILE, true)) {
@@ -29,14 +32,7 @@ public class logger {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //logger.error(message);
         System.out.println("ERROR: " + message);
-    }
-    public static void logDebug(String message) {
-        try (FileWriter writer = new FileWriter(LOG_FILE, true)) {
-            writer.write("DEBUG: " + message + "\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("DEBUG: " + message);
     }
 }

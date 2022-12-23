@@ -6,12 +6,10 @@ import filemanagement.service.exception.NoFileException;
 import org.json.*;
 
 public class GetFile {
-    public static boolean fileFound = false;
      static JSONObject jsonObject;
     static String line;
-    public static String fileExtension = null;
-    public static StringBuilder fileData = new StringBuilder();
-        public static void readJsonFile () throws NoFileException {
+    protected static StringBuilder fileData = new StringBuilder();
+        public static void readJsonFile () throws NoFileException, JsonReadingException {
             File jsonFile = new File("./files.json");
             if (!jsonFile.exists()) {
                 throw new NoFileException();
@@ -25,10 +23,10 @@ public class GetFile {
                 }
                 jsonObject = new JSONObject(sb.toString());
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                throw new JsonReadingException(e.getMessage());
             }
         }
-        public static void updateJsonData (JSONObject jsonObject) throws JsonReadingException {
+        public static void updateJsonData(JSONObject jsonObject) throws JsonReadingException {
             try {
                 FileWriter fw = new FileWriter("./files.json");
                 fw.write(jsonObject.toString());
@@ -38,7 +36,7 @@ public class GetFile {
                 throw new JsonReadingException(e.getMessage());
             }
         }
-        static void readFileData (String filePath) throws NoFileException {
+        static void readFileData(String filePath) throws NoFileException {
             try{
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
 
@@ -52,11 +50,7 @@ public class GetFile {
             }
         }
         public static String getExtension (String name){
-            int index = name.lastIndexOf('.');
-            if (index > 0) {
-                fileExtension = name.substring(index + 1);
-            }
-            return fileExtension;
+            return name.substring(name.lastIndexOf('.') + 1);
         }
         public static String encryptName(String name){
             return name +"-file";

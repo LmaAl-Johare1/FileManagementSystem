@@ -3,7 +3,8 @@ package filemanagement.service.userType;
 import filemanagement.service.ExportFile;
 import filemanagement.service.ReadFile;
 import filemanagement.service.exception.JsonReadingException;
-import filemanagement.service.log.logger;
+
+import filemanagement.service.log.Loggers;
 import filemanagement.service.menu.IMenu;
 
 import java.io.IOException;
@@ -68,7 +69,8 @@ public class Admin extends User implements IMenu {
                 // Create new file
                 break;
             default:
-            logger.logError("Invalid option selected.");
+
+            Loggers.logError("Invalid option selected.");
                 break;
         }
     }

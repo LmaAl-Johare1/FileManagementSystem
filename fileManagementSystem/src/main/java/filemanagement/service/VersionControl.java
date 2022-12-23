@@ -7,65 +7,77 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import filemanagement.service.exception.FileSizeException;
 import filemanagement.service.exception.JsonReadingException;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UnableToReadFile;
-import filemanagement.service.log.logger;
+
+import filemanagement.service.log.Loggers;
 import org.json.*;
 public class VersionControl extends GetFile {
     private static int version = 0;
-    public static void versionControl() throws IOException, JsonReadingException {
-        Scanner scanner = new Scanner(System.in);
-        logger.logInfo("Enter file path you want to add:");
-        String filePath = scanner.nextLine();
+    static JSONObject objFile = new JSONObject();
+    private static boolean fileFound = false;
+
+    public static void versionControl() throws FileSizeException, NoFileException, UnableToReadFile, JsonReadingException {
+        String fileSize;
+
         readJsonFile();
         JSONArray filesArray = jsonObject.getJSONArray("files");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter file path you want to add:");
+        String filePath = scanner.nextLine();
         Path path = Paths.get(filePath);
         boolean exists = Files.exists(path);
         if (!exists) {
             throw new NoFileException();
         }
-        String fileSize = String.valueOf(Files.size(path));
+        try{
+              fileSize = String.valueOf(Files.size(path));
+        }catch (IOException e){
+            throw new FileSizeException();
+        }
+
         String nameWithType = String.valueOf(path.getFileName());
         String filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
-        JSONObject objFile= null;
         //the data of the file
         readFileData(filePath);
         String replace;
-        try {
-            if (filesArray.length() == 0) {
-                addFile(path, filename + version, nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
-                logger.logInfo("The file added successfully \n");
-            } else {
-                for (int i = 0; i < filesArray.length(); i++) {
-                    JSONArray innerArray = filesArray.getJSONArray(i);
-                    for (int j = 0; j < innerArray.length(); j++) {
-                        objFile = innerArray.getJSONObject(j);
-                        if (objFile.getString("path").equals(filePath)) {
-                            version++;
-                        }
-                    }
-                }
-                Scanner toReplace = new Scanner(System.in);
-                logger.logInfo("\n Disabled Version control? (yes/no)");
-                replace = toReplace.nextLine().toLowerCase();
-                if (replace.equals("no")) {
-                    addFile(path, filename + version, nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
-                    logger.logInfo("The file new version done successfully \n");
 
-                } else if (replace.equals("yes")) {
-                    objFile.put("path", path);
-                    objFile.put("fileSize", fileSize);
-                    objFile.put("fileData", fileData.toString());
+
+        for (int i = 0; i < filesArray.length(); i++) {
+            JSONArray innerArray = filesArray.getJSONArray(i);
+            for (int j = 0; j < innerArray.length(); j++) {
+                objFile = innerArray.getJSONObject(j);
+                if (objFile.getString("path").equals(filePath)) {
+                    version++;
                     fileFound = true;
-                    logger.logInfo("The file overwrite done successfully \n");
-                } else {
-                    logger.logError("wrong operation \n");
+
+                    break;
                 }
             }
         }
-        catch (IOException e) {
-            throw new JsonReadingException(e.getMessage());
+        if (!fileFound) {
+            addFile(path, filename+"("+version+")", nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
+            Loggers.logInfo("The file added successfully \n");
+        } else {
+            Scanner toReplace = new Scanner(System.in);
+            System.out.print(" Disabled Version control? (yes/no)");
+            replace = toReplace.nextLine().toLowerCase();
+            if (replace.equals("no")) {
+                addFile(path, filename +"("+version+")", nameWithType, fileData.toString(), filesArray, jsonObject, fileSize);
+                Loggers.logInfo("The file new version done successfully \n");
+
+            } else if (replace.equals("yes")) {
+                objFile.put("path", path);
+                objFile.put("fileSize", fileSize);
+                objFile.put("fileData", fileData.toString());
+                fileFound = true;
+                Loggers.logInfo("The file overwrite done successfully \n");
+            } else {
+                Loggers.logError("wrong operation \n");
+            }
         }
     }
 
@@ -73,7 +85,7 @@ public class VersionControl extends GetFile {
         FileModel fileModel = new FileModel();
         fileModel.setPath(path);
         fileModel.setFileName(filename);
-        fileModel.setFileNameEncy(encryptName(name+version));
+        fileModel.setFileNameEncy(encryptName(name+"("+version+")"));
         fileModel.setFileData(fileData);
         fileModel.setFileType(getExtension(name));
         fileModel.setFileSize(fileSize);
