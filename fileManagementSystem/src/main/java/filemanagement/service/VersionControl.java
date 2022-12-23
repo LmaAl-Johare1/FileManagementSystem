@@ -11,6 +11,7 @@ import filemanagement.service.exception.FileSizeException;
 import filemanagement.service.exception.JsonReadingException;
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UnableToReadFile;
+
 import filemanagement.service.log.Loggers;
 import org.json.*;
 public class VersionControl extends GetFile {
@@ -44,6 +45,7 @@ public class VersionControl extends GetFile {
         readFileData(filePath);
         String replace;
 
+
         for (int i = 0; i < filesArray.length(); i++) {
             JSONArray innerArray = filesArray.getJSONArray(i);
             for (int j = 0; j < innerArray.length(); j++) {
@@ -51,6 +53,7 @@ public class VersionControl extends GetFile {
                 if (objFile.getString("path").equals(filePath)) {
                     version++;
                     fileFound = true;
+
                     break;
                 }
             }

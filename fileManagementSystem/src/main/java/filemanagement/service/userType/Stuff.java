@@ -1,15 +1,19 @@
 package filemanagement.service.userType;
 
+import filemanagement.service.ExportFile;
 import filemanagement.service.ReadFile;
 import filemanagement.service.exception.NoFileException;
+
 import filemanagement.service.log.Loggers;
 import filemanagement.service.menu.IMenu;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Stuff extends User implements IMenu {
 
     @Override
-    public void displayMenu() throws NoFileException {
+    public void displayMenu() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("=============Stuff Menu============");
         System.out.println(" * Read files : 1");
@@ -26,9 +30,10 @@ public class Stuff extends User implements IMenu {
         selectOption(option);
     }
     @Override
-    public void selectOption(int option) throws NoFileException {
+    public void selectOption(int option) throws IOException {
         switch (option) {
             case 1:
+                System.out.println("Please Enter the File number you want to read : ");
                 ReadFile.PrintFileName();
                 ReadFile.printFileData();
                 break;
@@ -36,6 +41,8 @@ public class Stuff extends User implements IMenu {
                 // Import files with the latest version class
                 break;
             case 3:
+                System.out.println("Enter File number you want to export it please : ");
+                ExportFile.exportFile();
                 // Export files
                 break;
             case 4:
@@ -54,6 +61,7 @@ public class Stuff extends User implements IMenu {
                 // Create new file
                 break;
             default:
+
                 Loggers.logError("Invalid option selected.");
                 break;
         }

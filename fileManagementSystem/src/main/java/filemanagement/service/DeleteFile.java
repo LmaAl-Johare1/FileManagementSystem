@@ -3,6 +3,7 @@ package filemanagement.service;
 import java.util.Scanner;
 
 import filemanagement.service.exception.JsonReadingException;
+
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Loggers;
 
@@ -29,6 +30,7 @@ public class DeleteFile extends GetFile {
 
         // Find the index of the file with the specified name
         if (filesArray.length() == 0) {
+
             throw new NoFileException();
         }
         else {

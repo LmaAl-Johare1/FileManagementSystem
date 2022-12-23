@@ -1,7 +1,9 @@
 package filemanagement.service.userType;
 
+import filemanagement.service.ExportFile;
 import filemanagement.service.ReadFile;
 import filemanagement.service.exception.JsonReadingException;
+
 import filemanagement.service.log.Loggers;
 import filemanagement.service.menu.IMenu;
 
@@ -32,6 +34,7 @@ public class Admin extends User implements IMenu {
     public void selectOption(int option) throws IOException, JsonReadingException {
         switch (option) {
             case 1:
+                System.out.println("Please Enter the File number you want to read : ");
                 ReadFile.PrintFileName();
                 ReadFile.printFileData();
                 break;
@@ -43,6 +46,8 @@ public class Admin extends User implements IMenu {
                 // Import files with overwrite
                 break;
             case 4:
+                System.out.println("Enter File number you want to export it please : ");
+                ExportFile.exportFile();
                 // Export files
                 break;
             case 5:
@@ -64,6 +69,7 @@ public class Admin extends User implements IMenu {
                 // Create new file
                 break;
             default:
+
             Loggers.logError("Invalid option selected.");
                 break;
         }

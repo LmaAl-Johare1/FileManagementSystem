@@ -41,7 +41,7 @@ ReadFile.printFileData();
                 // Classify files by Custom category
                 break;
             default:
-                Loggers.logError("Invalid option selected.");
+        Loggers.logError("Invalid option selected.");
                 break;
         }
     }
