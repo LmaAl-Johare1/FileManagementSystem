@@ -28,7 +28,7 @@ public class ReadFileInfoFromJson {
         Iterator<JsonNode> elements = filesNode.elements();
         while (elements.hasNext()) {
             JsonNode file = elements.next();
-            FileModel fileModel = new FileModel();
+            FileModel fileModel =  FileModel.getInstance();
             fileModel.setPath(Path.of(String.valueOf(file.path("filePath"))));
             fileModel.setFileNameEncy(file.path("fileNameEncy").asText());
             fileModel.setFileName(file.path("fileName").asText());
