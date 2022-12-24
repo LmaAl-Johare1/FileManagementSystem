@@ -2,11 +2,10 @@ package filemanagement.service.authenticate;
 
 import filemanagement.model.UserModel;
 import filemanagement.service.exception.JsonReadingException;
-import filemanagement.service.exception.NoFileException;
 import filemanagement.service.exception.UserNotFoundException;
-import filemanagement.service.userType.Admin;
-import filemanagement.service.userType.Reader;
-import filemanagement.service.userType.Stuff;
+import filemanagement.service.usertype.Admin;
+import filemanagement.service.usertype.Reader;
+import filemanagement.service.usertype.Stuff;
 
 import java.io.IOException;
 import java.util.List;

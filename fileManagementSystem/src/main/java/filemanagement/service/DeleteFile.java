@@ -4,8 +4,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import filemanagement.service.exception.JsonReadingException;
-
 import filemanagement.service.exception.NoFileException;
 import filemanagement.service.log.Loggers;
 
@@ -30,7 +28,7 @@ public class DeleteFile {
             Loggers.logWarning("No files in the system \n");
         }
         else {
-            ReadFile.PrintFileName();
+            ReadFile.printFileName();
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n Enter file name you want to delete (ex:file.txt): ");
         String nameWithType = scanner.nextLine();
