@@ -15,7 +15,7 @@ public class ReadFile {
     public static String fileData;
     public static void PrintFileName() throws NoFileException {
         try {
-            FileReader reader = new FileReader("C:\\Users\\lmaar\\OneDrive\\Desktop\\FileManagement\\fileManagementSystem\\files.json");
+            FileReader reader = new FileReader("./files.json");
             JSONTokener jsonString = new JSONTokener(reader);
             JSONObject json = new JSONObject(jsonString);
             JSONArray filesArray = json.getJSONArray("files");

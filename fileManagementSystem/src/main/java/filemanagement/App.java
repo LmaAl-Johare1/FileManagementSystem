@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws IOException, NameNotFoundException {
-
         ReadFileInfoFromJson reads = new ReadFileInfoFromJson();
         System.out.println(reads.getFileInfoFromJson());
         ClassifyByType classifyByType=new ClassifyByType();

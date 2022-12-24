@@ -1,25 +1,30 @@
 package filemanagement.service;
-
-import filemanagement.service.exception.JsonReadingException;
-import filemanagement.service.exception.NoFileException;
+import filemanagement.service.exception.*;
 import filemanagement.service.log.Loggers;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Scanner;
-import static filemanagement.service.GetFile.*;
 
 public class RollBack {
      static int maxVersion = -1;
-    public static void rollback() throws JsonReadingException, NoFileException {
+    public static void rollback() throws JsonReadingException, NoFileException, FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n Enter file name you want to Roll the version back (ex:file.txt): ");
         String nameWithType = scanner.nextLine();
         String filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
-        String fileType = getExtension(nameWithType);
+        GetFile roll= new GetFile();
+        String fileType = roll.getExtension(nameWithType);
         // Read the JSON file and parse it into a Java object
-        readJsonFile();
+
+        FileReader reader = new FileReader("./files.json");
+        JSONTokener jsonString = new JSONTokener(reader);
+        JSONObject jsonObject = new JSONObject(jsonString);
         JSONArray filesArray = jsonObject.getJSONArray("files");
+
         // If the file was not found, throw an exception
         if (filesArray == null) {
             throw new NoFileException();
@@ -53,7 +58,7 @@ public class RollBack {
                         filesArray.remove(i);
                         Loggers.logInfo("The file has been rolled back \n");
                         // Update the JSON file with the updated array
-                        updateJsonData(jsonObject);
+                        roll.updateJsonData(jsonObject);
                     }
                 }
             }
