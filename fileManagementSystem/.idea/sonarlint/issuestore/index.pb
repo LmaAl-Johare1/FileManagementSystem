@@ -17,7 +17,5 @@ p
 Ksrc/main/java/filemanagement/service/authenticate/ReadUserInfoFromJson.java,9\b\9bf280a96c893576006568fde18656654c9b8c12
 s
 Csrc/main/java/filemanagement/service/authenticate/FindUserById.java,e\b\ebb2a7fa69854e6e25ced50a3bfc9155de58972b
-i
-9src/main/java/filemanagement/service/userType/Reader.java,5\f\5fb05c907c33be897fd23eebff3253a65caf42eb
 d
 4src/main/java/filemanagement/service/ExportFile.java,e\a\ea8812298814b6e4483d68aa0be80f6360d2d01f

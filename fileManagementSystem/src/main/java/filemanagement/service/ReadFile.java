@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Scanner;
 public class ReadFile {
     public static String fileData;
-    public static void PrintFileName() throws NoFileException {
+    public static void printFileName() throws NoFileException {
         try {
             FileReader reader = new FileReader("./files.json");
             JSONTokener jsonString = new JSONTokener(reader);
@@ -47,12 +47,12 @@ public class ReadFile {
 
     public static void printFileData() throws NoFileException {
         try {
-            FileReader reader = new FileReader("C:\\Users\\lmaar\\OneDrive\\Desktop\\FileManagement\\fileManagementSystem\\files.json");
+            FileReader reader = new FileReader("./files.json");
             JSONTokener jsonString = new JSONTokener(reader);
             JSONObject json = new JSONObject(jsonString);
             JSONArray filesArray = json.getJSONArray("files");
             if (filesArray.length() == 0) {
-                ReadFile.PrintFileName();
+                ReadFile.printFileName();
             } else {
                 Scanner scanner = new Scanner(System.in);
                 int fileNumber = scanner.nextInt();

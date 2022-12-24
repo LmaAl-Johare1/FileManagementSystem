@@ -3,7 +3,6 @@ package filemanagement.service;
 import filemanagement.service.exception.NoFileException;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,7 +11,7 @@ import java.io.IOException;
 public class ExportFile {
 
     public static void exportFile() throws NoFileException {
-        ReadFile.PrintFileName();
+        ReadFile.printFileName();
         ReadFile.printFileData();
         String data = ReadFile.fileData;
                 JFrame frame = new JFrame("File Chooser ");
