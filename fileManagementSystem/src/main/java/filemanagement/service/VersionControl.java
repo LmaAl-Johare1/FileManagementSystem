@@ -82,7 +82,7 @@ public class VersionControl extends GetFile {
     }
 
     private static void addFile(Path path,String filename,String name, String fileData, JSONArray filesArray, JSONObject data, String fileSize ) throws UnableToReadFile {
-        FileModel fileModel = new FileModel();
+        FileModel fileModel =  FileModel.getInstance();
         fileModel.setPath(path);
         fileModel.setFileName(filename);
         fileModel.setFileNameEncy(encryptName(name+"("+version+")"));
@@ -90,7 +90,7 @@ public class VersionControl extends GetFile {
         fileModel.setFileType(getExtension(name));
         fileModel.setFileSize(fileSize);
         ArrayList<FileModel> array = new ArrayList<>();
-        array.add(new FileModel(fileModel.getFileNameEncy() + "", fileModel.getFileType() + "", Path.of(fileModel.getPath() + ""), fileModel.getFileSize() + "", fileModel.getFileName() + "", fileModel.getFileData() + ""));
+        array.add( FileModel.getInstance(fileModel.getFileNameEncy() + "", fileModel.getFileType() + "", Path.of(fileModel.getPath() + ""), fileModel.getFileSize() + "", fileModel.getFileName() + "", fileModel.getFileData() + ""));
         filesArray.put(array);
         try (FileWriter fw = new FileWriter("./files.json")) {
             fw.write(data.toString());

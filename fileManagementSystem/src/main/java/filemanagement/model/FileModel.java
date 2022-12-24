@@ -2,6 +2,8 @@ package filemanagement.model;
 import java.nio.file.Path;
 
 public class FileModel {
+    private static FileModel instance;
+
     private Path filePath;
     private String fileNameEncy;
     private String fileName;
@@ -9,17 +11,31 @@ public class FileModel {
     private String fileSize;
     private String fileData;
 
-    public FileModel(String fileNameEncy, String fileType, Path filePath, String fileSize, String fileName , String fileData) {
+    private FileModel(String fileNameEncy, String fileType, Path filePath, String fileSize, String fileName, String fileData) {
         this.fileNameEncy = fileNameEncy;
         this.fileName = fileName;
         this.fileType = fileType;
         this.filePath = filePath;
-        this.fileSize=fileSize;
-        this.fileData=fileData;
+        this.fileSize = fileSize;
+        this.fileData = fileData;
+    }
+    private FileModel(){}
+    public static synchronized FileModel getInstance(String fileNameEncy, String fileType, Path filePath, String fileSize, String fileName, String fileData) {
+        if (instance == null) {
+            instance = new FileModel(fileNameEncy, fileType, filePath, fileSize, fileName, fileData);
+        }
+        return instance;
+    }
 
+    public static FileModel getInstance() {
+        synchronized (UserModel.class) {
+            if (instance == null) {
+                instance = new FileModel();
+            }
+            return instance;
+        }
     }
-    public FileModel() {
-    }
+
     public String getFileNameEncy() {
         return fileNameEncy;
     }
@@ -58,6 +74,7 @@ public class FileModel {
     }
     @Override
     public String toString() {
-        return "Files [FilePath "+ filePath + ", FileNameEncy = " + fileNameEncy + "FileName = "+ fileName +", FileType = " + fileType +", FileType = "+  fileSize +" , FileData = " + fileData+"]";
+        return " files [FilePath "+ filePath + ", FileNameEncy = " + fileNameEncy + "FileName = "+ fileName +", FileType = " + fileType +", FileType = "+  fileSize +" , FileData = " + fileData+"]";
     }
+    // other methods go here...
 }

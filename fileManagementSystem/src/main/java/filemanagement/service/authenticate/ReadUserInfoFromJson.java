@@ -29,7 +29,7 @@ public class ReadUserInfoFromJson {
         Iterator<JsonNode> elements = usersNode.elements();
         while (elements.hasNext()) {
             JsonNode user = elements.next();
-            UserModel userModel = new UserModel();
+            UserModel userModel =  UserModel.getInstance();
             userModel.setName(user.path("name").asText());
             userModel.setId(user.path("id").asInt());
             userModel.setPassword(user.path("password").asText());
