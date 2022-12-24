@@ -15,7 +15,6 @@ public class Loggers {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        logger.info( message);
     }
 
     public static void logWarning(String message) {
@@ -24,7 +23,6 @@ public class Loggers {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        logger.warning( message);
     }
     public static void logError(String message) {
         try (FileWriter writer = new FileWriter(LOG_FILE, true)) {
@@ -32,7 +30,6 @@ public class Loggers {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //logger.error(message);
         System.out.println("ERROR: " + message);
     }
 }
