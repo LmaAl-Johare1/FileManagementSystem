@@ -19,13 +19,13 @@ public class DeleteFile extends GetFile {
 
     public static void deleteFile() throws JsonReadingException, NoFileException {
         readJsonFile();
-JSONArray filesArray = jsonObject.getJSONArray("files");
-if (filesArray.length()==0) {
-    Loggers.logWarning("No files in the system \n");
-}
-else {
-    ReadFile.PrintFileName();
-Scanner scanner = new Scanner(System.in);
+        JSONArray filesArray = jsonObject.getJSONArray("files");
+        if (filesArray.length()==0) {
+            Loggers.logWarning("No files in the system \n");
+        }
+        else {
+            ReadFile.PrintFileName();
+        Scanner scanner = new Scanner(System.in);
         System.out.print("\n Enter file name you want to delete (ex:file.txt): ");
         String nameWithType = scanner.nextLine();
 
@@ -36,8 +36,6 @@ Scanner scanner = new Scanner(System.in);
         }
 
         // Find the index of the file with the specified name
-
-
             for (int i = 0; i < filesArray.length(); i++) {
                 JSONArray innerArray = filesArray.getJSONArray(i);
                 JSONObject objFile = innerArray.getJSONObject(0);
