@@ -7,7 +7,6 @@ public class UserModel {
     private static UserModel instance;
     private UserModel(){}
 
-    // Static method to return the single instance of the class
     public static UserModel getInstance() {
         synchronized (UserModel.class) {
             if (instance == null) {

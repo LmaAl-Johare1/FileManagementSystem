@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="fileManagementSystem" />
+        <module name="filemManagementSystem" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="fileManagementSystem" target="19" />
+      <module name="filemManagementSystem" target="19" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
