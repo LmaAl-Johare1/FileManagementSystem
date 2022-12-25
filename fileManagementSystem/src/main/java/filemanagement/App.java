@@ -1,12 +1,13 @@
 package filemanagement;
 
-import filemanagement.service.classification.*;
-import filemanagement.service.exception.NameNotFoundException;
+import filemanagement.exception.NoDataInFileJsonException;
+import filemanagement.permission.service.classification.*;
+import filemanagement.exception.NameNotFoundException;
 import java.io.IOException;
 
 
 public class App {
-    public static void main(String[] args) throws IOException, NameNotFoundException {
+    public static void main(String[] args) throws IOException, NameNotFoundException, NoDataInFileJsonException {
         ReadFileInfoFromJson reads = new ReadFileInfoFromJson();
         System.out.println(reads.getFileInfoFromJson());
         ClassifyByType classifyByType=new ClassifyByType();
