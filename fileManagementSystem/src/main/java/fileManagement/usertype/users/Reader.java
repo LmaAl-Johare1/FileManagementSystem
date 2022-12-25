@@ -11,6 +11,7 @@ import filemanagement.permission.service.classification.ClassifyByCustomCategory
 import filemanagement.permission.service.classification.ClassifyBySize;
 import filemanagement.permission.service.classification.ClassifyByType;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Reader extends User {
@@ -25,7 +26,7 @@ public class Reader extends User {
         return instance;
     }
     @Override
-    public void displayMenu() throws NoFileException, NameNotFoundException, JsonReadingException, NoDataInFileJsonException {
+    public void displayMenu() throws IOException, NameNotFoundException, NoDataInFileJsonException {
         Scanner scanner = new Scanner(System.in);
         boolean isExit = false;
         while (!isExit) {
@@ -46,7 +47,7 @@ public class Reader extends User {
         }
     }
     @Override
-    public void selectOption(int option) throws NoFileException, NameNotFoundException, JsonReadingException, NoDataInFileJsonException {
+    public void selectOption(int option) throws IOException, NameNotFoundException, NoDataInFileJsonException {
         switch (option) {
             case 1 -> {
                 ReadFile readFile = (ReadFile) CachePermission.permissionMap.get("ReadFilePermission");

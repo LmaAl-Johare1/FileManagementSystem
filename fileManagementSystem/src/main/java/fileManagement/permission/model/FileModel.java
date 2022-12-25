@@ -18,7 +18,7 @@ public class FileModel {
         this.fileSize = fileSize;
         this.fileData = fileData;
     }
-    private FileModel(){}
+    public FileModel(){}
     public static synchronized FileModel getInstance(String fileNameEncy, String fileType, Path filePath, String fileSize, String fileName, String fileData) {
         if (instance == null) {
             instance = new FileModel(fileNameEncy, fileType, filePath, fileSize, fileName, fileData);
@@ -73,7 +73,8 @@ public class FileModel {
     }
     @Override
     public String toString() {
-        return " files [FilePath "+ filePath + ", FileNameEncy = " + fileNameEncy + "FileName = "+ fileName +", FileType = " + fileType +", FileSize = "+  fileSize +" , FileData = " + fileData+"]";
+
+        return " files [FilePath "+ filePath + ", FileNameEncy = " + fileNameEncy + " ,FileName = "+ fileName +", FileType = " + fileType +", FileSize = "+  fileSize +" , FileData = " + fileData+"]";
     }
 
 }

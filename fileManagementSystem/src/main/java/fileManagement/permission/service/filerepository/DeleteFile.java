@@ -29,7 +29,6 @@ public class DeleteFile implements IPermission {
     static String fileName;
 
     public static void deleteFile() throws IOException {
-        GetFile delete= new GetFile();
         FileReader reader = new FileReader("./files.json");
         JSONTokener jsonString = new JSONTokener(reader);
         JSONObject jsonObject = new JSONObject(jsonString);
@@ -53,7 +52,7 @@ public class DeleteFile implements IPermission {
             for (int i = 0; i < filesArray.length(); i++) {
                 JSONArray innerArray = filesArray.getJSONArray(i);
                 JSONObject objFile = innerArray.getJSONObject(0);
-                String fileType = delete.getExtension(nameWithType);
+                String fileType = GetFile.getExtension(nameWithType);
                 String fileNameDb = objFile.getString("fileName");
                 String fileTypeDb = objFile.getString("fileType");
                 if ((fileName.equals(fileNameDb)) && (fileType.equals(fileTypeDb))) {
@@ -65,7 +64,7 @@ public class DeleteFile implements IPermission {
             if (isRemoved) {
                 filesArray.remove(index);
                 Loggers.logInfo("File deleted successfully \n");
-                delete.updateJsonData(jsonObject);
+                GetFile.updateJsonData(jsonObject);
 
             } else {
                 throw new NoFileException();

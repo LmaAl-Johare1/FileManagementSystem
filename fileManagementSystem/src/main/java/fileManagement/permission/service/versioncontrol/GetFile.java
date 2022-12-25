@@ -21,7 +21,7 @@ public class GetFile {
             throw new JsonReadingException(e.getMessage());
         }
     }
-        static StringBuilder readFileData(String filePath) throws NullPointerException, JsonReadingException, NoFileException {
+        static StringBuilder readFileData(String filePath) throws NullPointerException, NoFileException {
             StringBuilder fileData = new StringBuilder();
             String line;
             try{

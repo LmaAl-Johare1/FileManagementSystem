@@ -24,23 +24,18 @@ public class CachePermission {
     public static final ImportFileNewVersion importFileNewVersion;
 
     static {
-        try {
-            importFileNewVersion = ImportFileNewVersion.getInstance();} catch (UnableToReadFile | FileNotFoundException |
-                                                                              JsonReadingException | FileSizeException |
-                                                                              NoFileException e) {
-            throw new RuntimeException(e);
-        }
 
+        importFileNewVersion = ImportFileNewVersion.getInstance();
     }
 
     public static final ImportFileOverwrite importFileOverwrite = ImportFileOverwrite.getInstance();
     public static final ExportFile exportFile = ExportFile.getInstance();
     public static final DeleteFile deleteFile = DeleteFile.getInstance();
     public static final RollBack rollBack = RollBack.getInstance();
-     public static final ClassifyByType classifyByType = ClassifyByType.getInstance();
-    public static final ClassifyBySize classifyBySize = ClassifyBySize.getInstance();
-     public static final ClassifyByCustomCategory classifyByCustomCategory = ClassifyByCustomCategory.getInstance();
-     public static final ClassifyByName classifyByName = ClassifyByName.getInstance();
+     public static final ClassifyByType classifyByType = new ClassifyByType();
+    public static final ClassifyBySize classifyBySize = new ClassifyBySize();
+     public static final ClassifyByCustomCategory classifyByCustomCategory = new ClassifyByCustomCategory();
+     public static final ClassifyByName classifyByName = new ClassifyByName();
 
     public static Map<String, Object> permissionMap = new HashMap<>();
 

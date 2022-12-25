@@ -3,7 +3,6 @@ import filemanagement.exception.JsonReadingException;
 import filemanagement.exception.NoFileException;
 import filemanagement.log.Loggers;
 import filemanagement.permission.IPermission;
-import filemanagement.permission.service.versioncontrol.GetFile;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -14,7 +13,6 @@ import java.util.Scanner;
 
 public class RollBack implements IPermission {
     private static RollBack instance;
-
     private RollBack() {}
     public static synchronized RollBack getInstance() {
         if (instance == null) {
@@ -40,6 +38,29 @@ public class RollBack implements IPermission {
             throw new NoFileException();
         }
 
+        int lastVersion=findLastVersion(filesArray, filename, fileType);
+
+        if (lastVersion != -1) {
+            for (int i = 0; i < filesArray.length(); i++) {
+                JSONArray innerArray = filesArray.getJSONArray(i);
+                for (int j = 0; j < innerArray.length(); j++) {
+                    JSONObject objFile = innerArray.getJSONObject(j);
+                    String fileNameDb = objFile.getString("fileName");
+                    String fileTypeDb = objFile.getString("fileType");
+                    if (fileNameDb.startsWith(filename) && fileType.equals(fileTypeDb) && fileNameDb.contains("("+maxVersion+")")) {
+                        filesArray.remove(i);
+                        Loggers.logInfo("The file has been rolled back \n");
+
+                        GetFile.updateJsonData(jsonObject);
+                    }
+                }
+            }
+        } else {
+            throw new NoFileException();
+        }
+    }
+    static int findLastVersion(JSONArray filesArray, String filename, String fileType) {
+        int maxVersion = 0;
         for (int i = 0; i < filesArray.length(); i++) {
             JSONArray innerArray = filesArray.getJSONArray(i);
             for (int j = 0; j < innerArray.length(); j++) {
@@ -54,28 +75,8 @@ public class RollBack implements IPermission {
                 }
             }
         }
-
-        if (maxVersion != -1) {
-            for (int i = 0; i < filesArray.length(); i++) {
-                JSONArray innerArray = filesArray.getJSONArray(i);
-                for (int j = 0; j < innerArray.length(); j++) {
-                    JSONObject objFile = innerArray.getJSONObject(j);
-                    String fileNameDb = objFile.getString("fileName");
-                    String fileTypeDb = objFile.getString("fileType");
-                    if (fileNameDb.startsWith(filename) && fileType.equals(fileTypeDb) && fileNameDb.contains("("+maxVersion+")")) {
-
-                        filesArray.remove(i);
-                        Loggers.logInfo("The file has been rolled back \n");
-
-                        GetFile.updateJsonData(jsonObject);
-                    }
-                }
-            }
-        } else {
-            throw new NoFileException();
-        }
+        return maxVersion;
     }
-
     @Override
     public void permission() throws NoFileException, FileNotFoundException, JsonReadingException {
         rollback();

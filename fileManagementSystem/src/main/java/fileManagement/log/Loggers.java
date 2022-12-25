@@ -8,7 +8,7 @@ public class Loggers {
 
     public static void logInfo(String message) {
         try (FileWriter writer = new FileWriter(LOG_FILE, true)) {
-            writer.write("INFO" + message + "\n");
+            writer.write("INFO: " + message + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
