@@ -1,9 +1,17 @@
 package filemanagement.usertype.users;
 
+import filemanagement.exception.NameNotFoundException;
+import filemanagement.exception.NoDataInFileJsonException;
+import filemanagement.permission.CachePermission;
+import filemanagement.permission.service.classification.ClassifyByCustomCategory;
+import filemanagement.permission.service.classification.ClassifyBySize;
+import filemanagement.permission.service.classification.ClassifyByType;
 import filemanagement.permission.service.filerepository.ExportFile;
 import filemanagement.permission.service.ReadFile;
 
 import filemanagement.log.Loggers;
+import filemanagement.permission.service.filerepository.ImportFileNewVersion;
+import filemanagement.permission.service.versioncontrol.RollBack;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -20,7 +28,7 @@ public class Stuff extends User {
     }
 
     @Override
-    public void displayMenu() throws IOException {
+    public void displayMenu() throws IOException, NameNotFoundException, NoDataInFileJsonException {
         Scanner scanner = new Scanner(System.in);
         boolean isExit = false;
         while (!isExit) {
@@ -44,40 +52,37 @@ public class Stuff extends User {
         }
     }
     @Override
-    public void selectOption(int option) throws IOException {
+    public void selectOption(int option) throws IOException, NameNotFoundException, NoDataInFileJsonException {
         switch (option) {
-            case 1:
-                System.out.println("Please Enter the File number you want to read : ");
-                ReadFile.printFileName();
-                ReadFile.printFileData();
-                break;
-            case 2:
-                // Import files with the latest version class
-                break;
-            case 3:
-                System.out.println("Enter File number you want to export it please : ");
-                ExportFile.exportFile();
-                // Export files
-                break;
-            case 4:
-                // Classify files by Type
-                break;
-            case 5:
-                // Classify files by Size
-                break;
-            case 6:
-                // Classify files by Custom category
-                break;
-            case 7:
-                // Rollback feature
-                break;
-            case 8:
-                // Create new file
-                break;
-            default:
-
-                Loggers.logError("Invalid option selected.");
-                break;
+            case 1 -> {
+                ReadFile readFile = (ReadFile) CachePermission.permissionMap.get("ReadFilePermission");
+                readFile.permission();
+            }
+            case 2 -> {
+                ImportFileNewVersion importFileNewVersion = (ImportFileNewVersion) CachePermission.permissionMap.get("ImportNewVersionPermission");
+                importFileNewVersion.permission();
+            }
+            case 3 -> {
+                ExportFile exportFile = (ExportFile) CachePermission.permissionMap.get("ExportFilePermission");
+                exportFile.permission();
+            }
+            case 4 -> {
+                ClassifyByType classifyByType = (ClassifyByType) CachePermission.permissionMap.get("ClassifyByTypePermission");
+                classifyByType.permission();
+            }
+            case 5 -> {
+                ClassifyBySize classifyBySize = (ClassifyBySize) CachePermission.permissionMap.get("ClassifyBySizePermission");
+                classifyBySize.permission();
+            }
+            case 6 -> {
+                ClassifyByCustomCategory classifyByCustomCategory = (ClassifyByCustomCategory) CachePermission.permissionMap.get("ClassifyByCustomCategoryPermission");
+                classifyByCustomCategory.permission();
+            }
+            case 7 -> {
+                RollBack rollBack = (RollBack) CachePermission.permissionMap.get("RollBackPermission");
+                rollBack.permission();
+            }
+            default -> Loggers.logError("Invalid option selected.");
         }
     }
 }

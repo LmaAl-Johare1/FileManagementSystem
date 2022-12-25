@@ -1,7 +1,8 @@
 package filemanagement.userauthenticate;
 
+import filemanagement.exception.NameNotFoundException;
+import filemanagement.exception.NoDataInFileJsonException;
 import filemanagement.permission.model.UserModel;
-import filemanagement.exception.JsonReadingException;
 import filemanagement.exception.UserNotFoundException;
 import filemanagement.usertype.users.Admin;
 import filemanagement.usertype.users.Reader;
@@ -39,26 +40,19 @@ public class FindUserById {
                 break;
             }
         }
-        String firstNumber = Character.toString(firstDigit);
-        return firstNumber;
+        return Character.toString(firstDigit);
     }
 
-    public void getTypeUserById(String idType) throws IOException, JsonReadingException {
+    public void getTypeUserById(String idType) throws IOException, NameNotFoundException, NoDataInFileJsonException {
         User reader = Reader.getInstance();
         User admin = Admin.getInstance();
         User stuff = Stuff.getInstance();
         String type = getTypeFromId(idType);
-            switch (type) {
-                case "1":
-                    reader.displayMenu();
-                    break;
-                case "2":
-                    stuff.displayMenu();
-                    break;
-                case "3":
-                    admin.displayMenu();
-                    break;
-            }
+        switch (type) {
+            case "1" -> reader.displayMenu();
+            case "2" -> stuff.displayMenu();
+            case "3" -> admin.displayMenu();
+        }
         }
 
 

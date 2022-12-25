@@ -1,12 +1,23 @@
 package filemanagement.permission.service.classification;
+import filemanagement.exception.NameNotFoundException;
 import filemanagement.exception.NoDataInFileJsonException;
+import filemanagement.permission.IPermission;
 import filemanagement.permission.model.FileModel;
 import filemanagement.exception.JsonReadingException;
 import filemanagement.exception.NoFileException;
 
 import java.util.*;
 
-public class ClassifyByName implements  IClassify{
+public class ClassifyByName implements  IClassify, IPermission {
+    private static ClassifyByName instance;
+
+    private ClassifyByName() {}
+    public static synchronized ClassifyByName getInstance() {
+        if (instance == null) {
+            instance = new ClassifyByName();
+        }
+        return instance;
+    }
     @Override
     public List<FileModel> classify() throws JsonReadingException, NoFileException, NoDataInFileJsonException {
         ReadFileInfoFromJson read = new ReadFileInfoFromJson();
@@ -26,4 +37,8 @@ public class ClassifyByName implements  IClassify{
         return sortedFileModels;
     }
 
+    @Override
+    public void permission() throws NoFileException, NameNotFoundException, JsonReadingException, NoDataInFileJsonException {
+        System.out.println("Sort by Name :" + classify());
+    }
 }

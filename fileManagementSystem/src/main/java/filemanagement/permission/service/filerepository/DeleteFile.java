@@ -7,13 +7,23 @@ import java.util.Scanner;
 import filemanagement.log.Loggers;
 import filemanagement.exception.NoFileException;
 
+import filemanagement.permission.IPermission;
 import filemanagement.permission.service.versioncontrol.GetFile;
 import filemanagement.permission.service.ReadFile;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-public class DeleteFile {
+public class DeleteFile implements IPermission {
+    private static DeleteFile instance;
+
+    private DeleteFile() {}
+    public static synchronized DeleteFile getInstance() {
+        if (instance == null) {
+            instance = new DeleteFile();
+        }
+        return instance;
+    }
     private static boolean isRemoved =false;
     private static int index;
     static String fileName;
@@ -62,5 +72,10 @@ public class DeleteFile {
                 throw new NoFileException();
             }
         }
+    }
+
+    @Override
+    public void permission() throws NoFileException {
+        System.out.println("how call it, Noor");
     }
 }

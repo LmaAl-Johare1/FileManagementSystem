@@ -10,12 +10,13 @@ import filemanagement.exception.UnableToReadFile;
 import filemanagement.log.Loggers;
 import filemanagement.exception.NoFileException;
 
+import filemanagement.permission.IPermission;
 import filemanagement.permission.service.filerepository.Import;
 import filemanagement.permission.service.filerepository.ImportFileNewVersion;
 import filemanagement.permission.service.filerepository.ImportFileOverwrite;
 import filemanagement.permission.service.versioncontrol.GetFile;
 import org.json.*;
-public class VersionControl {
+public class VersionControl implements IPermission {
     private static int version = 0;
     static JSONObject objFile = new JSONObject();
     private static boolean fileFound = false;
@@ -59,10 +60,10 @@ public class VersionControl {
             System.out.print(" Disabled Version control? (yes/no)");
             replace = toReplace.nextLine().toLowerCase();
             if (replace.equals("no")) {
-                ImportFileNewVersion newVersion= new ImportFileNewVersion();
+                ImportFileNewVersion newVersion= ImportFileNewVersion.getInstance();
                 newVersion.newVersion(path, filename , nameWithType, fileData.toString(), filesArray, jsonObject, fileSize,version);
             } else if (replace.equals("yes")) {
-                ImportFileOverwrite overwrite= new ImportFileOverwrite();
+                ImportFileOverwrite overwrite= ImportFileOverwrite.getInstance();
                 overwrite.overWrite(objFile,path,fileData,fileSize,fileFound);
                 importFile.updateJsonData(jsonObject);
             }
@@ -70,5 +71,10 @@ public class VersionControl {
                 Loggers.logError("wrong operation \n");
             }
         }
+    }
+
+    @Override
+    public void permission() throws NoFileException {
+        System.out.println("how call it Noor");
     }
 }

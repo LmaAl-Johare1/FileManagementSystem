@@ -4,18 +4,6 @@ public class UserModel {
     private int id;
     private String password;
 
-    private static UserModel instance;
-    private UserModel(){}
-
-    public static UserModel getInstance() {
-        synchronized (UserModel.class) {
-            if (instance == null) {
-                instance = new UserModel();
-            }
-            return instance;
-        }
-    }
-
     public String getName() { return name; }
     public int getId() { return id; }
 

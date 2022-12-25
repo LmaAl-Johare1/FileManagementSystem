@@ -1,6 +1,7 @@
 package filemanagement.permission.service.filerepository;
 
 import filemanagement.exception.NoFileException;
+import filemanagement.permission.IPermission;
 import filemanagement.permission.service.ReadFile;
 
 import javax.swing.*;
@@ -9,7 +10,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 
-public class ExportFile {
+public class ExportFile  implements IPermission {
+    private static ExportFile instance;
+
+    private ExportFile() {}
+    public static synchronized ExportFile getInstance() {
+        if (instance == null) {
+            instance = new ExportFile();
+        }
+        return instance;
+    }
 
     public static void exportFile() throws NoFileException {
         ReadFile.printFileName();
@@ -40,7 +50,13 @@ public class ExportFile {
                     }
                 }
             }
-        }
+
+    @Override
+    public void permission() throws NoFileException {
+        System.out.println("Enter File number you want to export it please : ");
+        exportFile();
+    }
+}
 
 
 

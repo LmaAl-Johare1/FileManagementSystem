@@ -1,5 +1,6 @@
 package filemanagement.permission.service.classification;
 import filemanagement.exception.NoDataInFileJsonException;
+import filemanagement.permission.IPermission;
 import filemanagement.permission.model.FileModel;
 import filemanagement.exception.JsonReadingException;
 import filemanagement.exception.NameNotFoundException;
@@ -8,7 +9,16 @@ import filemanagement.exception.NoFileException;
 
 import java.util.*;
 
-public class ClassifyByCustomCategory implements IClassify{
+public class ClassifyByCustomCategory implements IClassify, IPermission {
+    private static ClassifyByCustomCategory instance;
+
+    private ClassifyByCustomCategory() {}
+    public static synchronized ClassifyByCustomCategory getInstance() {
+        if (instance == null) {
+            instance = new ClassifyByCustomCategory();
+        }
+        return instance;
+    }
     public List<String> getOpenFolders(String name) {
         List<String> openFolders = new ArrayList<>();
         openFolders.add(name);
@@ -49,5 +59,10 @@ public class ClassifyByCustomCategory implements IClassify{
         }
 
         return openFolderFileModels;
+    }
+
+    @Override
+    public void permission() throws NoFileException, NameNotFoundException, JsonReadingException, NoDataInFileJsonException {
+        System.out.println("Sort by Custom Category :" + classify());
     }
 }
