@@ -24,6 +24,7 @@ public class CachePermission {
     public static final ImportFileNewVersion importFileNewVersion;
 
     static {
+
         importFileNewVersion = ImportFileNewVersion.getInstance();
     }
 
