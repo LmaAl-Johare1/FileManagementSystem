@@ -26,7 +26,7 @@ public class ReadUserInfoFromJson {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         try {
-            root = mapper.readTree(new File("fileManagementSystem/userData.json"));
+            root = mapper.readTree(new File("./userData.json"));
         } catch (IOException e) {
             throw new JsonReadingException(e.getMessage());
         }

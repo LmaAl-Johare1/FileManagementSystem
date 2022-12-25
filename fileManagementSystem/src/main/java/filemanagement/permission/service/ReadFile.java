@@ -18,7 +18,7 @@ import java.util.Scanner;
         private static final String ENTER_FILE_NUMBER = "Please Enter the File number you want to read: ";
         private static final ReadFile instance = new ReadFile();
         public static String fileData;
-
+static int fileCount = 1 ;
         private ReadFile() {}
 
         public static synchronized ReadFile getInstance() {
@@ -43,7 +43,6 @@ import java.util.Scanner;
             } else {
                 System.out.println("List of File in the system:");
                 for (int i = 0; i < filesArray.length(); i++) {
-                    int fileCount = i + 1;
                     JSONArray innerArray = filesArray.getJSONArray(i);
                     for (int j = 0; j < innerArray.length(); j++) {
                         JSONObject fileObject = innerArray.getJSONObject(j);
@@ -51,6 +50,7 @@ import java.util.Scanner;
                         String fileType = fileObject.getString("fileType");
 
                         System.out.println("File number " + fileCount + " " + "is " + " " + fileName + "." + fileType + '\n');
+                        fileCount ++ ;
                     }
                 }
             }
@@ -67,7 +67,6 @@ import java.util.Scanner;
                     if (fileNumber < 1 || fileNumber > filesArray.length()) {
                         Loggers.logWarning("No File in the system \n");
                     } else {
-                        int fileCount = 1;
                         for (int i = 0; i < filesArray.length(); i++) {
                             JSONArray innerArray = filesArray.getJSONArray(i);
                             for (int j = 0; j < innerArray.length(); j++) {
