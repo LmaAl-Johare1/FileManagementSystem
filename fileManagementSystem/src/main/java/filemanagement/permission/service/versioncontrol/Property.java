@@ -5,11 +5,8 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 import filemanagement.exception.*;
-import filemanagement.log.Loggers;
-
 import filemanagement.permission.IPermission;
-import filemanagement.permission.service.filerepository.AddFile;
-import filemanagement.permission.service.filerepository.ImportFileNewVersion;
+
 import org.json.*;
 public class Property implements IPermission {
     public static int version = 0;
@@ -24,7 +21,7 @@ public class Property implements IPermission {
     public static JSONArray filesArray;
     public static JSONObject jsonObject;
 
-    public static void properties() throws FileSizeException, NoFileException, UnableToReadFile, FileNotFoundException, JsonReadingException {
+    public static void properties() throws FileSizeException, NoFileException, FileNotFoundException{
 
         FileReader reader = new FileReader("./files.json");
         JSONTokener jsonString = new JSONTokener(reader);
@@ -41,7 +38,6 @@ public class Property implements IPermission {
          nameWithType = String.valueOf(path.getFileName());
          filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
          fileData = GetFile.readFileData(filePath);
-        String replace;
 
         for (int i = 0; i < filesArray.length(); i++) {
             JSONArray innerArray = filesArray.getJSONArray(i);
