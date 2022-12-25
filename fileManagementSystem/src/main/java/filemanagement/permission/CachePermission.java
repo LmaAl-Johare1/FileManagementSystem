@@ -24,19 +24,7 @@ public class CachePermission {
     public static final ImportFileNewVersion importFileNewVersion;
 
     static {
-        try {
-            importFileNewVersion = ImportFileNewVersion.getInstance();
-        } catch (UnableToReadFile e) {
-            throw new RuntimeException(e);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (JsonReadingException e) {
-            throw new RuntimeException(e);
-        } catch (FileSizeException e) {
-            throw new RuntimeException(e);
-        } catch (NoFileException e) {
-            throw new RuntimeException(e);
-        }
+        importFileNewVersion = ImportFileNewVersion.getInstance();
     }
 
     public static final ImportFileOverwrite importFileOverwrite = ImportFileOverwrite.getInstance();
