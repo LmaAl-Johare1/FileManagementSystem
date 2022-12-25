@@ -1,0 +1,6 @@
+
+¨
+java:S1130"éRemove the declaration of thrown exception 'filemanagement.service.exception.JsonReadingException', as it cannot be thrown from method's body.(Â—Ù8∂Äç§‘0
+]	java:S125"<This block of commented-out lines of code should be removed.(»Ë€ß¯ˇˇˇˇ8∑Äç§‘0
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ıÏ™Æˇˇˇˇˇ
+S	java:S106B"9Replace this use of System.out or System.err by a logger.(≠ºíÌ˘ˇˇˇˇ

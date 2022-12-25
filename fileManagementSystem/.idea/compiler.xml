@@ -6,10 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="filemManagementSystem" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="filemManagementSystem" target="19" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="filemManagementSystem" options="--add-modules java.desktop" />
+    </option>
   </component>
 </project>

@@ -1,17 +1,22 @@
-package fileManagement;
-import fileManagement.service.DeleteFile;
-import fileManagement.service.ImportFile;
+package filemanagement;
+
+import filemanagement.exception.NoDataInFileJsonException;
+import filemanagement.exception.UserNotFoundException;
+import filemanagement.exception.NameNotFoundException;
+import filemanagement.userauthenticate.ReadUserInfoFromJson;
+import filemanagement.userauthenticate.UserLogin;
 
 import java.io.IOException;
 
-import static fileManagement.service.DeleteFile.deleteFile;
-//import static fileManagement.service.VersionControl.versionControl;
 
 public class App {
-    public static void main(String[] args) throws IOException {
-      ImportFile.ImportFile();
-       DeleteFile.deleteFile();
-        //versionControl();
-        deleteFile();
-    }
+    public static void main(String[] args) throws IOException, UserNotFoundException, NameNotFoundException, NoDataInFileJsonException {
+
+        ReadUserInfoFromJson readInfo = ReadUserInfoFromJson.getInstance();
+        System.out.println(readInfo.getUserInfoFromJson());
+        UserLogin userLogin = UserLogin.getInstance();
+        userLogin.logIn(readInfo);
+    
+
+}
 }

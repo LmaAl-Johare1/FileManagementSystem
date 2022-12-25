@@ -1,8 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="142a2549-1816-47ab-a77c-b8ed0b093078" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/fileManagement/model/File.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/CachePermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/IPermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/ReadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByCustomCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByCustomCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyBySize.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyBySize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByType.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/DeleteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/DeleteFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ExportFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ExportFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileNewVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileNewVersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileOverwrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileOverwrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/RollBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/RollBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/VersionControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/VersionControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/FindUserById.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/FindUserById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/ReadUserInfoFromJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/ReadUserInfoFromJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/menu/IMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/menu/IMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Stuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Stuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/model/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/model/fileModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/DeleteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ExportFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/GetFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/Import.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ImportFileNewVersion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ImportFileOverwrite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ReadFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/RollBack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/VersionControl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/authenticate/FindUserById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/authenticate/ReadUserInfoFromJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/authenticate/UserLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByCustomCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByName$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyBySize$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyBySize.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByType$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/IClassify.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ReadFileInfoFromJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/FileSizeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/JsonReadingException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/NameNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/NoFileException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/UnableToReadFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/UserNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/log/Loggers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/menu/IMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/userType/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/userType/Reader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/userType/Stuff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/userType/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/userData.json" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/userData.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,11 +76,32 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/FindUserById.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -26,13 +111,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/lmaar/Documents"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Msi/Desktop/advance/FileManagementSystem&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,5 +133,16 @@
       <updated>1671356057283</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
