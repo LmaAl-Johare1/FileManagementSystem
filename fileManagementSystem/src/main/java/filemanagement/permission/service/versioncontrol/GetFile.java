@@ -11,6 +11,7 @@ import org.json.*;
 public class GetFile {
 
     public static void updateJsonData(JSONObject jsonObject) throws JsonReadingException {
+
         try {
             FileWriter fileWriter = new FileWriter("./files.json");
             fileWriter.write(jsonObject.toString());
