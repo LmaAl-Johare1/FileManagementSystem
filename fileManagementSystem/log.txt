@@ -26,3 +26,6 @@ INFOLog-in Into System Successfully
 INFOThe file new version done successfully 
 
 >>>>>>> c63084171b386674d51fec77f819419e4e9fbe7e
+WARNING: Log-in Into System Failed
+INFOLog-in Into System Successfully
+INFOLog-in Into System Successfully
