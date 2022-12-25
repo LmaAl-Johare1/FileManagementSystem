@@ -29,12 +29,12 @@ import java.util.Scanner;
             try (FileReader reader = new FileReader("./files.json")) {
                 JSONTokener jsonString = new JSONTokener(reader);
                 JSONObject json = new JSONObject(jsonString);
-               JSONArray filesArray =  json.getJSONArray("files");
-            return filesArray;
+                return json.getJSONArray("files");
             } catch (IOException e) {
                 throw new NoFileException();
             }
         }
+
 
         public static void printFileName() throws NoFileException {
             JSONArray filesArray = getFilesArray();
