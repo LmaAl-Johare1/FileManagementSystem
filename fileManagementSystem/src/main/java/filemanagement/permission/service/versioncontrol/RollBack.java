@@ -2,6 +2,7 @@ package filemanagement.permission.service.versioncontrol;
 import filemanagement.exception.JsonReadingException;
 import filemanagement.exception.NoFileException;
 import filemanagement.log.Loggers;
+import filemanagement.permission.IPermission;
 import filemanagement.permission.service.versioncontrol.GetFile;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -11,7 +12,16 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
-public class RollBack {
+public class RollBack implements IPermission {
+    private static RollBack instance;
+
+    private RollBack() {}
+    public static synchronized RollBack getInstance() {
+        if (instance == null) {
+            instance = new RollBack();
+        }
+        return instance;
+    }
      static int maxVersion = -1;
     public static void rollback() throws JsonReadingException, NoFileException, FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
@@ -66,5 +76,10 @@ public class RollBack {
         } else {
             throw new NoFileException();
         }
+    }
+
+    @Override
+    public void permission() throws NoFileException {
+        System.out.println("how call it, Noor");
     }
 }

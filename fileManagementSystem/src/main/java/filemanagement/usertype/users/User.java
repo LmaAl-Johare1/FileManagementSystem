@@ -1,23 +1,15 @@
 package filemanagement.usertype.users;
 
-import filemanagement.exception.JsonReadingException;
+import filemanagement.exception.NameNotFoundException;
+import filemanagement.exception.NoDataInFileJsonException;
 import filemanagement.usertype.menu.IMenu;
 
 import java.io.IOException;
 
 public class User implements IMenu {
-    private static User instance;
-
-    private User() {}
-    public static synchronized User getInstance() {
-        if (instance == null) {
-            instance = new User();
-        }
-        return instance;
-    }
     @Override
-    public void displayMenu() throws IOException, JsonReadingException {}
+    public void displayMenu() throws IOException, NameNotFoundException, NoDataInFileJsonException {}
 
     @Override
-    public void selectOption(int option) throws IOException, JsonReadingException {}
+    public void selectOption(int option) throws IOException, NameNotFoundException, NoDataInFileJsonException {}
 }

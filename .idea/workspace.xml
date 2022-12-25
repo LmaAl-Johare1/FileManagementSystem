@@ -5,42 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="142a2549-1816-47ab-a77c-b8ed0b093078" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/exception/NoDataInFileJsonException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/CachePermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/IPermission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/fileData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/log.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/model/FileModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/model/FileModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/model/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/DeleteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/DeleteFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/ExportFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ExportFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/GetFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/GetFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/Import.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/Import.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/ImportFileNewVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileNewVersion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/ImportFileOverwrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileOverwrite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/ReadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/RollBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/RollBack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/VersionControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/VersionControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/authenticate/FindUserById.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/FindUserById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/authenticate/ReadUserInfoFromJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/ReadUserInfoFromJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/authenticate/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/UserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/classification/ClassifyByCustomCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByCustomCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/classification/ClassifyByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/classification/ClassifyBySize.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyBySize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/classification/ClassifyByType.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/classification/IClassify.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/IClassify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/classification/ReadFileInfoFromJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ReadFileInfoFromJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/exception/FileSizeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/exception/FileSizeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/exception/JsonReadingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/exception/JsonReadingException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/exception/NameNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/exception/NameNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/exception/NoFileException.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/exception/NoFileException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/exception/UnableToReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/exception/UnableToReadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/log/Loggers.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/log/Loggers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/menu/IMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/menu/IMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/usertype/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/usertype/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/usertype/Stuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Stuff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/service/usertype/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/ReadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByCustomCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByCustomCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyBySize.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyBySize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByType.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/classification/ClassifyByType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/DeleteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/DeleteFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ExportFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ExportFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileNewVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileNewVersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileOverwrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/filerepository/ImportFileOverwrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/RollBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/RollBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/VersionControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/permission/service/versioncontrol/VersionControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/FindUserById.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/FindUserById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/ReadUserInfoFromJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/ReadUserInfoFromJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/menu/IMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/menu/IMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Stuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/Stuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/usertype/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/model/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/model/fileModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/DeleteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ExportFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/GetFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/Import.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ImportFileNewVersion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ImportFileOverwrite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/ReadFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/RollBack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/VersionControl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/authenticate/FindUserById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/authenticate/ReadUserInfoFromJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/authenticate/UserLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByCustomCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByName$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyBySize$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyBySize.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByType$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ClassifyByType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/IClassify.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/classification/ReadFileInfoFromJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/FileSizeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/JsonReadingException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/NameNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/NoFileException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/UnableToReadFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/exception/UserNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/log/Loggers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/menu/IMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/userType/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/userType/Reader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/userType/Stuff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/target/classes/fileManagement/service/userType/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileManagementSystem/userData.json" beforeDir="false" afterPath="$PROJECT_DIR$/fileManagementSystem/userData.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +87,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/fileManagementSystem/src/main/java/filemanagement/userauthenticate/FindUserById.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -70,6 +99,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
