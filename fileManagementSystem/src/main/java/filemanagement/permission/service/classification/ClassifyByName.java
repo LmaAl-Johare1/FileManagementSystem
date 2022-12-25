@@ -9,15 +9,6 @@ import filemanagement.exception.NoFileException;
 import java.util.*;
 
 public class ClassifyByName implements  IClassify, IPermission {
-    private static ClassifyByName instance;
-
-    private ClassifyByName() {}
-    public static synchronized ClassifyByName getInstance() {
-        if (instance == null) {
-            instance = new ClassifyByName();
-        }
-        return instance;
-    }
     @Override
     public List<FileModel> classify() throws JsonReadingException, NoFileException, NoDataInFileJsonException {
         ReadFileInfoFromJson read = new ReadFileInfoFromJson();
