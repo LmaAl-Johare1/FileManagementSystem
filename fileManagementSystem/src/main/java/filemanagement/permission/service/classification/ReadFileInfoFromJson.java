@@ -3,7 +3,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import filemanagement.permission.model.FileModel;
 import filemanagement.exception.JsonReadingException;
-import filemanagement.exception.NoFileException;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,18 +10,17 @@ import java.nio.file.Path;
 import java.util.*;
 
 public class ReadFileInfoFromJson {
-
-    public JsonNode readFileJsonForFiles() throws JsonReadingException, NoFileException {
+    public JsonNode readFileJsonForFiles() throws JsonReadingException {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         try {
-            root = mapper.readTree(new File("C:\\Users\\Msi\\Desktop\\advance\\FileManagementSystem\\fileManagementSystem\\files.json"));
+            root = mapper.readTree(new File("./files.json"));
         } catch (IOException e) {
             throw new JsonReadingException(e.getMessage());
         }
         return root;
     }
-    public List<FileModel> getFileInfoFromJson() throws JsonReadingException, NoFileException {
+    public List<FileModel> getFileInfoFromJson() throws JsonReadingException {
         List<FileModel> fileModels = new ArrayList<>();
         JsonNode filesNode = readFileJsonForFiles().path("files");
         for (JsonNode fileArray : filesNode) {
@@ -38,12 +36,4 @@ public class ReadFileInfoFromJson {
         }
         return fileModels;
     }
-
-
-
-
-
-
-
-
 }

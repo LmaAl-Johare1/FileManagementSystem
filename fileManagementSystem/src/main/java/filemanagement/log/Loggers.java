@@ -3,8 +3,6 @@ package filemanagement.log;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
-import java.util.logging.*;
 public class Loggers {
     private static final String LOG_FILE = "log.txt";
 

@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserLogin {
-
     public static String id;
     public static final int MAXIMUM_NUMBER_OF_ATTEMPTS = 3;
     public static final String LOGGER_INFO_MESSAGE = "You have exceeded the maximum number of attempts. Please contact the administrator if you have forgotten your password.";
@@ -29,7 +28,7 @@ public class UserLogin {
     }
     public static final String LOGGER_WARNING_MESSAGE = "Log-in Into System Failed";
     public static final String LOGGER_INFO_MESSAGE_SUCCESS = "Log-in Into System Successfully";
-    public void logIn(ReadUserInfoFromJson reader) throws UserNotFoundException, JsonReadingException, IOException, NameNotFoundException, NoDataInFileJsonException {
+    public void logIn(ReadUserInfoFromJson reader) throws UserNotFoundException, IOException, NameNotFoundException, NoDataInFileJsonException {
         FindUserById findUserById = new FindUserById();
         Scanner scanner = new Scanner(System.in);
         List<UserModel> users = reader.getUserInfoFromJson();

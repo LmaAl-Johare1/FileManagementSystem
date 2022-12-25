@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class ExportFile  implements IPermission {
     private static ExportFile instance;
-
     private ExportFile() {}
     public static synchronized ExportFile getInstance() {
         if (instance == null) {
@@ -21,7 +20,7 @@ public class ExportFile  implements IPermission {
         return instance;
     }
 
-    public static void exportFile() throws NoFileException {
+    public static void exportFile() throws NoFileException{
         ReadFile.printFileName();
         ReadFile.printFileData();
         String data = ReadFile.fileData;
@@ -40,8 +39,9 @@ public class ExportFile  implements IPermission {
                     }
                     file = new File(filePath);
 
+                    FileOutputStream fileOutputStream;
                     try {
-                        FileOutputStream fileOutputStream = new FileOutputStream(file);
+                        fileOutputStream = new FileOutputStream(file);
                         fileOutputStream.write(data.getBytes());
                         fileOutputStream.close();
                         frame.setVisible(false);
@@ -53,8 +53,9 @@ public class ExportFile  implements IPermission {
 
     @Override
     public void permission() throws NoFileException {
-        System.out.println("Enter File number you want to export it please : ");
         exportFile();
+        System.out.println("Enter File number you want to export it please : ");
+
     }
 }
 

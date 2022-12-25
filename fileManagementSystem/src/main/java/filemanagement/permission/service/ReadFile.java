@@ -28,12 +28,11 @@ public class ReadFile implements IPermission {
     public static String fileData;
     public static void printFileName() throws NoFileException {
         try {
-            FileReader reader = new FileReader("fileManagementSystem/files.json");
+            FileReader reader = new FileReader("./files.json");
             JSONTokener jsonString = new JSONTokener(reader);
             JSONObject json = new JSONObject(jsonString);
             JSONArray filesArray = json.getJSONArray("files");
             if (filesArray.length() == 0) {
-
                 Loggers.logWarning("No File in the system \n");
             } else {
                 System.out.println("List of File in the system : ");
@@ -57,10 +56,9 @@ public class ReadFile implements IPermission {
 
     }
 
-
     public static void printFileData() throws NoFileException {
         try {
-            FileReader reader = new FileReader("fileManagementSystem/files.json");
+            FileReader reader = new FileReader("./files.json");
             JSONTokener jsonString = new JSONTokener(reader);
             JSONObject json = new JSONObject(jsonString);
             JSONArray filesArray = json.getJSONArray("files");
@@ -79,7 +77,7 @@ public class ReadFile implements IPermission {
                     for (int j = 0; j < innerArray.length(); j++) {
                         JSONObject fileObject = innerArray.getJSONObject(j);
                         String fileName = fileObject.getString("fileName");
-                         fileData = fileObject.getString("fileData.json");
+                         fileData = fileObject.getString("fileData");
 
                         if (fileNumber == fileCount) {
                             if (fileData == null || fileData.isEmpty()) {
@@ -103,8 +101,8 @@ public class ReadFile implements IPermission {
 
     @Override
     public void permission() throws NoFileException {
-        System.out.println(ENTER_FILE_NUMBER);
         printFileName();
+        System.out.println(ENTER_FILE_NUMBER);
         printFileData();
     }
 }

@@ -11,6 +11,7 @@ import org.json.*;
 public class GetFile {
 
     public static void updateJsonData(JSONObject jsonObject) throws JsonReadingException {
+
         try {
             FileWriter fileWriter = new FileWriter("./files.json");
             fileWriter.write(jsonObject.toString());
@@ -20,7 +21,7 @@ public class GetFile {
             throw new JsonReadingException(e.getMessage());
         }
     }
-        static StringBuilder readFileData(String filePath) throws NoFileException,NullPointerException {
+        static StringBuilder readFileData(String filePath) throws NullPointerException, JsonReadingException, NoFileException {
             StringBuilder fileData = new StringBuilder();
             String line;
             try{

@@ -24,11 +24,11 @@ public class ClassifyBySize implements IClassify, IPermission {
     @Override
     public List<FileModel> classify() throws JsonReadingException, NoFileException, NoDataInFileJsonException {
         ReadFileInfoFromJson read = new ReadFileInfoFromJson();
-        List<FileModel> FileModels = read.getFileInfoFromJson();
-        if (FileModels.isEmpty()) {
+        List<FileModel> fileModels = read.getFileInfoFromJson();
+        if (fileModels.isEmpty()) {
             throw new NoDataInFileJsonException("No data in file");
         }
-        List<FileModel> sortedFileModels = new ArrayList<>(FileModels);
+        List<FileModel> sortedFileModels = new ArrayList<>(fileModels);
 
         Collections.sort(sortedFileModels, new Comparator<FileModel>() {
             @Override
