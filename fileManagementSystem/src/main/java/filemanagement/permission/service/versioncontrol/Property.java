@@ -38,19 +38,21 @@ public class Property implements IPermission {
          nameWithType = String.valueOf(path.getFileName());
          filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
          fileData = GetFile.readFileData(filePath);
-
+         version=getVersion( filePath,  filesArray, version);
+    }
+    public static int getVersion(String filePath, JSONArray filesArray,int version) {
         for (int i = 0; i < filesArray.length(); i++) {
             JSONArray innerArray = filesArray.getJSONArray(i);
             for (int j = 0; j < innerArray.length(); j++) {
-                objFile = innerArray.getJSONObject(j);
+                JSONObject objFile = innerArray.getJSONObject(j);
                 if (objFile.getString("path").equals(filePath)) {
                     version++;
                     fileFound = true;
                 }
             }
         }
+        return version;
     }
-
     @Override
     public void permission() throws NoFileException {
         System.out.println("how call it Noor");
