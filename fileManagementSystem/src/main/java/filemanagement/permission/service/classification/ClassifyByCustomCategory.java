@@ -10,14 +10,6 @@ import filemanagement.exception.NoFileException;
 import java.util.*;
 
 public class ClassifyByCustomCategory implements IClassify, IPermission {
-    private static ClassifyByCustomCategory instance;
-    private ClassifyByCustomCategory() {}
-    public static synchronized ClassifyByCustomCategory getInstance() {
-        if (instance == null) {
-            instance = new ClassifyByCustomCategory();
-        }
-        return instance;
-    }
     public List<String> getOpenFolders(String name) {
         List<String> openFolders = new ArrayList<>();
         openFolders.add(name);

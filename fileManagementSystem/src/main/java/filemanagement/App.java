@@ -3,6 +3,7 @@ package filemanagement;
 import filemanagement.exception.NoDataInFileJsonException;
 import filemanagement.exception.UserNotFoundException;
 import filemanagement.exception.NameNotFoundException;
+import filemanagement.permission.service.classification.ClassifyByType;
 import filemanagement.userauthenticate.ReadUserInfoFromJson;
 import filemanagement.userauthenticate.UserLogin;
 

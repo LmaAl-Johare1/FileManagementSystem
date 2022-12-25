@@ -14,7 +14,7 @@ public class ReadFileInfoFromJson {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         try {
-            root = mapper.readTree(new File("./files.json"));
+            root = mapper.readTree(new File("fileManagementSystem/files.json"));
         } catch (IOException e) {
             throw new JsonReadingException(e.getMessage());
         }
