@@ -44,8 +44,7 @@ public class ClassifyByType implements IClassify , IPermission {
         JsonNode root;
         root = read.readFileJsonForFiles();
         ((ObjectNode) root).set("files", mapper.valueToTree(classify()));
-        mapper.writeValue(new FileWriter("fileManagementSystem/file34368" +
-                ".json"), root);
+        mapper.writeValue(new FileWriter("./files.json"), root);
         Loggers.logInfo("Added to JSON file");
     }
 
