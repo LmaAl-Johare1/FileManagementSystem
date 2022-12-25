@@ -31,7 +31,7 @@ public class ClassifyByCustomCategory implements IClassify, IPermission {
         return name;
     }
     @Override
-    public List<FileModel> classify() throws JsonReadingException, NoFileException, NameNotFoundException, NoDataInFileJsonException {
+    public List<FileModel> classify() throws JsonReadingException, NameNotFoundException, NoDataInFileJsonException {
         ReadFileInfoFromJson read = new ReadFileInfoFromJson();
         List<FileModel> fileModels = read.getFileInfoFromJson();
         if (fileModels.isEmpty()) {

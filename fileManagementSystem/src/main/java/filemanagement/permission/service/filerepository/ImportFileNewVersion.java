@@ -17,15 +17,15 @@ import java.nio.file.Path;
 public class ImportFileNewVersion implements IPermission {
     private static ImportFileNewVersion instance;
 
-    public ImportFileNewVersion() throws UnableToReadFile, FileNotFoundException, JsonReadingException, FileSizeException, NoFileException {}
-    public static synchronized ImportFileNewVersion getInstance() throws UnableToReadFile, FileNotFoundException, JsonReadingException, FileSizeException, NoFileException {
+    public ImportFileNewVersion() {}
+    public static synchronized ImportFileNewVersion getInstance() {
         if (instance == null) {
             instance = new ImportFileNewVersion();
         }
         return instance;
     }
 
-    public void newVersion() throws UnableToReadFile, FileNotFoundException, JsonReadingException, FileSizeException, NoFileException {
+    public void newVersion() throws UnableToReadFile {
         Path path=Property.path;
         String filename=Property.filename;
         String nameWithType=Property.nameWithType;
