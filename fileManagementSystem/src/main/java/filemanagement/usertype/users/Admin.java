@@ -38,7 +38,7 @@ public class Admin extends User {
             System.out.println("=============Admin Menu============");
             System.out.println(" * Read files : 1");
             System.out.println(" * Import files with the Overwrite : 2");
-            System.out.println(" * Import files with the new version : 3");
+            System.out.println(" * Import files/new version : 3");
             System.out.println(" * Export files : 4");
             System.out.println(" * Delete files : 5");
             System.out.println(" * Classify files by :");

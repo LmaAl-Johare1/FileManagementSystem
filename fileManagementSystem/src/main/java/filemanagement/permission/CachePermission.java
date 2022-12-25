@@ -1,5 +1,9 @@
 package filemanagement.permission;
 
+import filemanagement.exception.FileSizeException;
+import filemanagement.exception.JsonReadingException;
+import filemanagement.exception.NoFileException;
+import filemanagement.exception.UnableToReadFile;
 import filemanagement.permission.service.ReadFile;
 import filemanagement.permission.service.classification.ClassifyByCustomCategory;
 import filemanagement.permission.service.classification.ClassifyByName;
@@ -10,14 +14,31 @@ import filemanagement.permission.service.filerepository.ExportFile;
 import filemanagement.permission.service.filerepository.ImportFileNewVersion;
 import filemanagement.permission.service.filerepository.ImportFileOverwrite;
 import filemanagement.permission.service.versioncontrol.RollBack;
-import filemanagement.permission.service.versioncontrol.VersionControl;
 
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CachePermission {
     public static final ReadFile readFile = ReadFile.getInstance();
-    public static final ImportFileNewVersion importFileNewVersion = ImportFileNewVersion.getInstance();
+    public static final ImportFileNewVersion importFileNewVersion;
+
+    static {
+        try {
+            importFileNewVersion = ImportFileNewVersion.getInstance();
+        } catch (UnableToReadFile e) {
+            throw new RuntimeException(e);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (JsonReadingException e) {
+            throw new RuntimeException(e);
+        } catch (FileSizeException e) {
+            throw new RuntimeException(e);
+        } catch (NoFileException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static final ImportFileOverwrite importFileOverwrite = ImportFileOverwrite.getInstance();
     public static final ExportFile exportFile = ExportFile.getInstance();
     public static final DeleteFile deleteFile = DeleteFile.getInstance();
@@ -25,10 +46,7 @@ public class CachePermission {
      public static final ClassifyByType classifyByType = ClassifyByType.getInstance();
     public static final ClassifyBySize classifyBySize = ClassifyBySize.getInstance();
      public static final ClassifyByCustomCategory classifyByCustomCategory = ClassifyByCustomCategory.getInstance();
-
      public static final ClassifyByName classifyByName = ClassifyByName.getInstance();
-
-
 
     public static Map<String, Object> permissionMap = new HashMap<>();
 

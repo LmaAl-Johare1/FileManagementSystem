@@ -11,7 +11,6 @@ import java.util.*;
 
 public class ClassifyByCustomCategory implements IClassify, IPermission {
     private static ClassifyByCustomCategory instance;
-
     private ClassifyByCustomCategory() {}
     public static synchronized ClassifyByCustomCategory getInstance() {
         if (instance == null) {
@@ -34,8 +33,8 @@ public class ClassifyByCustomCategory implements IClassify, IPermission {
     @Override
     public List<FileModel> classify() throws JsonReadingException, NoFileException, NameNotFoundException, NoDataInFileJsonException {
         ReadFileInfoFromJson read = new ReadFileInfoFromJson();
-        List<FileModel> FileModels = read.getFileInfoFromJson();
-        if (FileModels.isEmpty()) {
+        List<FileModel> fileModels = read.getFileInfoFromJson();
+        if (fileModels.isEmpty()) {
             throw new NoDataInFileJsonException("No data in file");
         }
         List<FileModel> openFolderFileModels = new ArrayList<>();
@@ -44,7 +43,7 @@ public class ClassifyByCustomCategory implements IClassify, IPermission {
 
         List<String> openFolders = getOpenFolders(getFolderName());
 
-        for (FileModel fileModel : FileModels) {
+        for (FileModel fileModel : fileModels) {
             String fileName = fileModel.getFileName();
             if (openFolders.contains(fileName)) {
                 openFolderFileModels.add(fileModel);

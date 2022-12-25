@@ -22,13 +22,13 @@ public class ClassifyByType implements IClassify , IPermission {
         return instance;
     }
     @Override
-    public List<FileModel> classify() throws JsonReadingException, NoFileException, NoDataInFileJsonException {
+    public List<FileModel> classify() throws JsonReadingException, NoDataInFileJsonException {
         ReadFileInfoFromJson read = new ReadFileInfoFromJson();
-        List<FileModel> FileModels = read.getFileInfoFromJson();
-        if (FileModels.isEmpty()) {
+        List<FileModel> fileModels = read.getFileInfoFromJson();
+        if (fileModels.isEmpty()) {
             throw new NoDataInFileJsonException("No data in file");
         }
-        List<FileModel> sortedFileModels = new ArrayList<>(FileModels);
+        List<FileModel> sortedFileModels = new ArrayList<>(fileModels);
 
         Collections.sort(sortedFileModels, new Comparator<FileModel>() {
             @Override
@@ -39,7 +39,6 @@ public class ClassifyByType implements IClassify , IPermission {
 
         return sortedFileModels;
     }
-
     @Override
     public void permission() throws NoFileException, NameNotFoundException, JsonReadingException, NoDataInFileJsonException {
         System.out.println("Sort by Type :" + classify());

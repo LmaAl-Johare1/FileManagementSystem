@@ -1,10 +1,10 @@
 package filemanagement.permission;
 
-import filemanagement.exception.JsonReadingException;
-import filemanagement.exception.NameNotFoundException;
-import filemanagement.exception.NoDataInFileJsonException;
-import filemanagement.exception.NoFileException;
+import filemanagement.exception.*;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public interface IPermission {
-    void permission() throws NoFileException, NameNotFoundException, JsonReadingException, NoDataInFileJsonException;
+    void permission() throws IOException, NameNotFoundException, NoDataInFileJsonException;
 }

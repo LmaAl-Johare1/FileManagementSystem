@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-public class Import {
+public class AddFile {
     public static void addFile(Path path, String filename, String name, String fileData, JSONArray filesArray, JSONObject data, String fileSize) throws UnableToReadFile {
         FileModel fileModel =  FileModel.getInstance();
         fileModel.setPath(path);

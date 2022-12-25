@@ -3,7 +3,6 @@ import java.nio.file.Path;
 
 public class FileModel {
     private static FileModel instance;
-
     private Path filePath;
     private String fileNameEncy;
     private String fileName;

@@ -28,8 +28,7 @@ public class RollBack implements IPermission {
         System.out.print("\n Enter file name you want to Roll the version back (ex:file.txt): ");
         String nameWithType = scanner.nextLine();
         String filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
-        GetFile roll= new GetFile();
-        String fileType = roll.getExtension(nameWithType);
+        String fileType = GetFile.getExtension(nameWithType);
 
         FileReader reader = new FileReader("./files.json");
         JSONTokener jsonString = new JSONTokener(reader);
@@ -41,7 +40,6 @@ public class RollBack implements IPermission {
             throw new NoFileException();
         }
 
-        int maxVersion = -1;
         for (int i = 0; i < filesArray.length(); i++) {
             JSONArray innerArray = filesArray.getJSONArray(i);
             for (int j = 0; j < innerArray.length(); j++) {
@@ -69,7 +67,7 @@ public class RollBack implements IPermission {
                         filesArray.remove(i);
                         Loggers.logInfo("The file has been rolled back \n");
 
-                        roll.updateJsonData(jsonObject);
+                        GetFile.updateJsonData(jsonObject);
                     }
                 }
             }
@@ -79,7 +77,7 @@ public class RollBack implements IPermission {
     }
 
     @Override
-    public void permission() throws NoFileException {
-        System.out.println("how call it, Noor");
+    public void permission() throws NoFileException, FileNotFoundException, JsonReadingException {
+        rollback();
     }
 }

@@ -50,7 +50,6 @@ public class DeleteFile implements IPermission {
             throw new NoFileException();
         }
 
-
             for (int i = 0; i < filesArray.length(); i++) {
                 JSONArray innerArray = filesArray.getJSONArray(i);
                 JSONObject objFile = innerArray.getJSONObject(0);
@@ -75,7 +74,7 @@ public class DeleteFile implements IPermission {
     }
 
     @Override
-    public void permission() throws NoFileException {
-        System.out.println("how call it, Noor");
+    public void permission() throws IOException {
+        deleteFile() ;
     }
 }
