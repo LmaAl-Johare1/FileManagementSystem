@@ -1,12 +1,2 @@
-INFOThe file added successfully 
 
-INFOThe file added successfully 
-
-ERROR: wrong operation 
-
-INFOThe file added successfully 
-
-INFOThe file overwrite done successfully 
-
-INFOThe file new version done successfully 
 
