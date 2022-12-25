@@ -42,7 +42,7 @@ public class ClassifyBySize implements IClassify, IPermission {
         JsonNode root;
         root = read.readFileJsonForFiles();
         ((ObjectNode) root).set("files", mapper.valueToTree(classify()));
-        mapper.writeValue(new FileWriter("fileManagementSystem/file.json"), root);
+        mapper.writeValue(new FileWriter("./files.json"), root);
         Loggers.logInfo("Added to JSON file");
     }
 
