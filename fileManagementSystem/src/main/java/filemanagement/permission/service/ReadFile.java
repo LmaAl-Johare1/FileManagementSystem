@@ -26,7 +26,7 @@ import java.util.Scanner;
         }
 
         public static JSONArray getFilesArray() throws NoFileException {
-            try (FileReader reader = new FileReader("./files.json")) {
+            try (FileReader reader = new FileReader("C:\\Users\\Msi\\Desktop\\finaaaaal\\FileManagementSystem\\files.json")) {
                 JSONTokener jsonString = new JSONTokener(reader);
                 JSONObject json = new JSONObject(jsonString);
                 return json.getJSONArray("files");

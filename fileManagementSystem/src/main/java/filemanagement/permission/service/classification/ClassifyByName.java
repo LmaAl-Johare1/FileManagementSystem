@@ -31,4 +31,5 @@ public class ClassifyByName implements  IClassify, IPermission {
     public void permission() throws NoFileException, NameNotFoundException, JsonReadingException, NoDataInFileJsonException {
         System.out.println("Sort by Name :" + classify());
     }
+
 }

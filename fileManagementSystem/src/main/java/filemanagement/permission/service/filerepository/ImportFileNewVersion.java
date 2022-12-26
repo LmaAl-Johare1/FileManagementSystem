@@ -15,15 +15,6 @@ import java.nio.file.Path;
 
 
 public class ImportFileNewVersion implements IPermission {
-    private static ImportFileNewVersion instance;
-
-    public ImportFileNewVersion() {}
-    public static synchronized ImportFileNewVersion getInstance() {
-        if (instance == null) {
-            instance = new ImportFileNewVersion();
-        }
-        return instance;
-    }
 
     public void newVersion() throws UnableToReadFile {
         Path path=Property.path;

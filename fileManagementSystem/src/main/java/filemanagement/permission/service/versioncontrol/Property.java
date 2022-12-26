@@ -5,10 +5,9 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 import filemanagement.exception.*;
-import filemanagement.permission.IPermission;
 
 import org.json.*;
-public class Property implements IPermission {
+public class Property  {
     public static int version = 0;
     public static JSONObject objFile = new JSONObject();
     public static boolean fileFound = false;
@@ -23,28 +22,28 @@ public class Property implements IPermission {
 
     public static void properties() throws FileSizeException, NoFileException, FileNotFoundException{
 
-        FileReader reader = new FileReader("./files.json");
+        FileReader reader = new FileReader("C:\\Users\\Msi\\Desktop\\finaaaaal\\FileManagementSystem\\files.json");
         JSONTokener jsonString = new JSONTokener(reader);
-         jsonObject = new JSONObject(jsonString);
-         filesArray = jsonObject.getJSONArray("files");
+        jsonObject = new JSONObject(jsonString);
+        filesArray = jsonObject.getJSONArray("files");
 
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter file path you want to add:");
 
-         filePath = scanner.nextLine();
-         path = Paths.get(filePath);
-         fileSize = GetFile.getSize(path);
-         nameWithType = String.valueOf(path.getFileName());
-         filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
-         fileData = GetFile.readFileData(filePath);
-         version=getVersion( filePath,  filesArray, version);
+        filePath = scanner.nextLine();
+        path = Paths.get(filePath);
+        fileSize = GetFile.getSize(path);
+        nameWithType = String.valueOf(path.getFileName());
+        filename = nameWithType.substring(0, nameWithType.lastIndexOf('.'));
+        fileData = GetFile.readFileData(filePath);
+        version=getVersion( filePath,  filesArray, version);
     }
     public static int getVersion(String filePath, JSONArray filesArray,int version) {
         for (int i = 0; i < filesArray.length(); i++) {
             JSONArray innerArray = filesArray.getJSONArray(i);
             for (int j = 0; j < innerArray.length(); j++) {
-                JSONObject objFile = innerArray.getJSONObject(j);
+                objFile = innerArray.getJSONObject(j);
                 if (objFile.getString("path").equals(filePath)) {
                     version++;
                     fileFound = true;
@@ -53,8 +52,5 @@ public class Property implements IPermission {
         }
         return version;
     }
-    @Override
-    public void permission() throws NoFileException {
-        System.out.println("how call it Noor");
-    }
 }
+

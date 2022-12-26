@@ -26,15 +26,6 @@ public class FileModel {
         return instance;
     }
 
-    public static FileModel getInstance() {
-        synchronized (UserModel.class) {
-            if (instance == null) {
-                instance = new FileModel();
-            }
-            return instance;
-        }
-    }
-
     public String getFileNameEncy() {
         return fileNameEncy;
     }
