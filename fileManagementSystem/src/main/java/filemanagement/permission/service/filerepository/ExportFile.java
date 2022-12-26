@@ -34,9 +34,6 @@ public class ExportFile  implements IPermission {
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File file = fileChooser.getSelectedFile();
                     String filePath = file.getAbsolutePath();
-                    if (!filePath.endsWith(".txt")) {
-                        filePath = filePath + ".txt";
-                    }
                     file = new File(filePath);
 
                     FileOutputStream fileOutputStream;

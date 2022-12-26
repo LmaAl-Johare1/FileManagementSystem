@@ -84,5 +84,49 @@ INFO: Log-in Into System Successfully
 INFO: File deleted successfully 
 
 INFO: Log-in Into System Successfully
+<<<<<<< HEAD
+=======
+INFO: The file added successfully 
+
+INFO: The file new version done successfully 
+
+INFO: Log-in Into System Successfully
+INFO: The file overwrite done successfully 
+
+INFO: Log-in Into System Successfully
+INFO: The file overwrite done successfully 
+
+INFO: Log-in Into System Successfully
+INFO: The file overwrite done successfully 
+
+INFO: Log-in Into System Successfully
+INFO: Log-in Into System Successfully
+INFO: Log-in Into System Successfully
+INFO: The file added successfully 
+
+INFO: The file new version done successfully 
+
+INFO: The file overwrite done successfully 
+
+INFO: Log-in Into System Successfully
+INFO: Log-in Into System Successfully
+INFO: Added to JSON file
+INFO: Log-in Into System Successfully
+INFO: Log-in Into System Successfully
+INFO: Log-in Into System Successfully
+WARNING: Log-in Into System Failed
+INFO: Log-in Into System Successfully
+INFO: Log-in Into System Successfully
+INFO: The file added successfully 
+
+INFO: The file new version done successfully 
+
+INFO: The file overwrite done successfully 
+
+INFO: Log-in Into System Successfully
+INFO: The file overwrite done successfully 
+
+INFO: Log-in Into System Successfully
+>>>>>>> 0b3c38b51f6b1da232b580523b24089d8b2bcbd7
 INFO: The file overwrite done successfully 
 
