@@ -5,10 +5,9 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 import filemanagement.exception.*;
-import filemanagement.permission.IPermission;
 
 import org.json.*;
-public class Property implements IPermission {
+public class Property  {
     public static int version = 0;
     public static JSONObject objFile = new JSONObject();
     public static boolean fileFound = false;
@@ -44,7 +43,7 @@ public class Property implements IPermission {
         for (int i = 0; i < filesArray.length(); i++) {
             JSONArray innerArray = filesArray.getJSONArray(i);
             for (int j = 0; j < innerArray.length(); j++) {
-                JSONObject objFile = innerArray.getJSONObject(j);
+                 objFile = innerArray.getJSONObject(j);
                 if (objFile.getString("path").equals(filePath)) {
                     version++;
                     fileFound = true;
@@ -52,9 +51,5 @@ public class Property implements IPermission {
             }
         }
         return version;
-    }
-    @Override
-    public void permission() throws NoFileException {
-        System.out.println("how call it Noor");
     }
 }
