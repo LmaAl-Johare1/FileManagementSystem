@@ -21,12 +21,8 @@ import java.util.Map;
 
 public class CachePermission {
     public static final ReadFile readFile = ReadFile.getInstance();
-    public static final ImportFileNewVersion importFileNewVersion;
+    public static final ImportFileNewVersion importFileNewVersion= ImportFileNewVersion.getInstance();
 
-    static {
-
-        importFileNewVersion = ImportFileNewVersion.getInstance();
-    }
 
     public static final ImportFileOverwrite importFileOverwrite = ImportFileOverwrite.getInstance();
     public static final ExportFile exportFile = ExportFile.getInstance();

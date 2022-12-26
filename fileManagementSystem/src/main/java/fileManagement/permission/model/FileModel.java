@@ -27,7 +27,7 @@ public class FileModel {
     }
 
     public static FileModel getInstance() {
-        synchronized (UserModel.class) {
+        synchronized (FileModel.class) {
             if (instance == null) {
                 instance = new FileModel();
             }
