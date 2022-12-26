@@ -14,7 +14,11 @@ public class ReadFileInfoFromJson {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         try {
+<<<<<<< HEAD
             root = mapper.readTree(new File("./files.json"));
+=======
+            root = mapper.readTree(new File("C:\\Users\\Msi\\Desktop\\finaaaaal\\FileManagementSystem\\files.json"));
+>>>>>>> dafddc778f87ce524d4854d785b8462191317beb
         } catch (IOException e) {
             throw new JsonReadingException(e.getMessage());
         }
@@ -25,7 +29,7 @@ public class ReadFileInfoFromJson {
         JsonNode filesNode = readFileJsonForFiles().path("files");
         for (JsonNode fileArray : filesNode) {
             JsonNode file = fileArray.get(0);
-            FileModel fileModel =  FileModel.getInstance();
+            FileModel fileModel = new FileModel();
             fileModel.setPath(Path.of(file.path("path").asText()));
             fileModel.setFileNameEncy(file.path("fileNameEncy").asText());
             fileModel.setFileName(file.path("fileName").asText());

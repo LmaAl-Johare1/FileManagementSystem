@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class AddFile {
     public static void addFile(Path path, String filename, String name, String fileData, JSONArray filesArray, JSONObject data, String fileSize) throws UnableToReadFile {
-        FileModel fileModel =  FileModel.getInstance();
+        FileModel fileModel = new FileModel();
         fileModel.setPath(path);
         fileModel.setFileName(filename);
         fileModel.setFileNameEncy(GetFile.encryptName(filename+"."+GetFile.getExtension(name)));

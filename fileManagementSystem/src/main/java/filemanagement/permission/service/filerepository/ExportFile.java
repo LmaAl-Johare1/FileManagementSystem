@@ -11,14 +11,6 @@ import java.io.IOException;
 
 
 public class ExportFile  implements IPermission {
-    private static ExportFile instance;
-    private ExportFile() {}
-    public static synchronized ExportFile getInstance() {
-        if (instance == null) {
-            instance = new ExportFile();
-        }
-        return instance;
-    }
 
     public static void exportFile() throws NoFileException{
         ReadFile.printFileName();

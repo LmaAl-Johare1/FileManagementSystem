@@ -21,6 +21,7 @@ import java.util.Map;
 
 public class CachePermission {
     public static final ReadFile readFile = ReadFile.getInstance();
+<<<<<<< HEAD
     public static final ImportFileNewVersion importFileNewVersion= ImportFileNewVersion.getInstance();
 
 
@@ -28,6 +29,14 @@ public class CachePermission {
     public static final ExportFile exportFile = ExportFile.getInstance();
     public static final DeleteFile deleteFile = DeleteFile.getInstance();
     public static final RollBack rollBack = RollBack.getInstance();
+=======
+    public static final ImportFileNewVersion importFileNewVersion = new ImportFileNewVersion();
+
+    public static final ImportFileOverwrite importFileOverwrite =  ImportFileOverwrite.getInstance();
+    public static final ExportFile exportFile = new ExportFile();
+    public static final DeleteFile deleteFile = new DeleteFile();
+    public static final RollBack rollBack = new RollBack();
+>>>>>>> dafddc778f87ce524d4854d785b8462191317beb
      public static final ClassifyByType classifyByType = new ClassifyByType();
     public static final ClassifyBySize classifyBySize = new ClassifyBySize();
      public static final ClassifyByCustomCategory classifyByCustomCategory = new ClassifyByCustomCategory();

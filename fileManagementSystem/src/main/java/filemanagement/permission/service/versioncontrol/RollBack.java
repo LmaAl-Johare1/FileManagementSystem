@@ -12,14 +12,6 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class RollBack implements IPermission {
-    private static RollBack instance;
-    private RollBack() {}
-    public static synchronized RollBack getInstance() {
-        if (instance == null) {
-            instance = new RollBack();
-        }
-        return instance;
-    }
      static int maxVersion = -1;
     public static void rollback() throws JsonReadingException, NoFileException, FileNotFoundException {
         Scanner scanner = new Scanner(System.in);

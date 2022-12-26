@@ -18,6 +18,7 @@ public class ReadFile implements IPermission {
     private static final String ENTER_FILE_NUMBER = "Please Enter the File number you want to read: ";
     private static final ReadFile instance = new ReadFile();
     public static String fileData;
+
     private ReadFile() {}
 
     public static synchronized ReadFile getInstance() {
@@ -25,7 +26,7 @@ public class ReadFile implements IPermission {
     }
 
     public static JSONArray getFilesArray() throws NoFileException {
-        try (FileReader reader = new FileReader("./files.json")) {
+        try (FileReader reader = new FileReader("C:\\Users\\Msi\\Desktop\\finaaaaal\\FileManagementSystem\\files.json")) {
             JSONTokener jsonString = new JSONTokener(reader);
             JSONObject json = new JSONObject(jsonString);
             return json.getJSONArray("files");
@@ -42,8 +43,8 @@ public class ReadFile implements IPermission {
         } else {
             System.out.println("List of File in the system:");
             for (int i = 0; i < filesArray.length(); i++) {
+                int fileCount = i + 1;
                 JSONArray innerArray = filesArray.getJSONArray(i);
-                int fileCount= i+1;
                 for (int j = 0; j < innerArray.length(); j++) {
                     JSONObject fileObject = innerArray.getJSONObject(j);
                     String fileName = fileObject.getString("fileName");
@@ -66,10 +67,9 @@ public class ReadFile implements IPermission {
                 if (fileNumber < 1 || fileNumber > filesArray.length()) {
                     Loggers.logWarning("No File in the system \n");
                 } else {
+                    int fileCount = 1;
                     for (int i = 0; i < filesArray.length(); i++) {
                         JSONArray innerArray = filesArray.getJSONArray(i);
-                        int fileCount= i+1;
-
                         for (int j = 0; j < innerArray.length(); j++) {
                             JSONObject fileObject = innerArray.getJSONObject(j);
                             String fileName = fileObject.getString("fileName");
@@ -84,6 +84,7 @@ public class ReadFile implements IPermission {
                                 }
                                 return;
                             }
+                            fileCount++;
                         }
 
                     }

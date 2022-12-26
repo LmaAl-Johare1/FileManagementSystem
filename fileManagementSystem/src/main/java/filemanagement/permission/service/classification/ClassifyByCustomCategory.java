@@ -9,6 +9,8 @@ import filemanagement.exception.NoFileException;
 
 import java.util.*;
 
+import static filemanagement.permission.service.versioncontrol.Property.nameWithType;
+
 public class ClassifyByCustomCategory implements IClassify, IPermission {
     public List<String> getOpenFolders(String name) {
         List<String> openFolders = new ArrayList<>();
@@ -37,7 +39,8 @@ public class ClassifyByCustomCategory implements IClassify, IPermission {
 
         for (FileModel fileModel : fileModels) {
             String fileName = fileModel.getFileName();
-            if (openFolders.contains(fileName)) {
+            String filename = fileName.substring(0, fileName.lastIndexOf('('));
+            if (openFolders.contains(filename)) {
                 openFolderFileModels.add(fileModel);
             } else {
                 defaultFolderFileModels.add(fileModel);

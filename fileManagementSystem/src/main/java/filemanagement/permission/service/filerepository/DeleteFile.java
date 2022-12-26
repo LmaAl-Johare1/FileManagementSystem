@@ -15,15 +15,6 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 public class DeleteFile implements IPermission {
-    private static DeleteFile instance;
-
-    private DeleteFile() {}
-    public static synchronized DeleteFile getInstance() {
-        if (instance == null) {
-            instance = new DeleteFile();
-        }
-        return instance;
-    }
     private static boolean isRemoved =false;
     private static int index;
     static String fileName;
