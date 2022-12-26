@@ -21,40 +21,36 @@ public class GetFile {
             throw new JsonReadingException(e.getMessage());
         }
     }
-        static StringBuilder readFileData(String filePath) throws NullPointerException, NoFileException {
-            StringBuilder fileData = new StringBuilder();
-            String line;
-            try{
-                BufferedReader reader = new BufferedReader(new FileReader(filePath));
-                while ( (line=reader.readLine())!= null) {
+    static StringBuilder readFileData(String filePath) throws NullPointerException, NoFileException {
+        StringBuilder fileData = new StringBuilder();
+        String line;
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader(filePath));
+            while ( (line=reader.readLine())!= null) {
                 fileData.append(line);
             }
-            }
-            catch (IOException e) {
-                throw new NoFileException();
-            }
-            return fileData;
         }
-        public static String getExtension (String name){
-            return name.substring(name.lastIndexOf('.') + 1);
+        catch (IOException e) {
+            throw new NoFileException();
         }
-        public static String encryptName(String name){
-            return name +"-file";
-        }
+        return fileData;
+    }
+    public static String getExtension (String name){
+        return name.substring(name.lastIndexOf('.') + 1);
+    }
+    public static String encryptName(String name){
+        return name +"-file";
+    }
 
-        public static String getSize(Path path) throws NoFileException, FileSizeException {
-            boolean exists = Files.exists(path);
-            if (!exists) {
-                throw new NoFileException();
-            }
-            try{
-                return String.valueOf(Files.size(path));
-            }catch (IOException e){
-                throw new FileSizeException();
-            }
+    public static String getSize(Path path) throws NoFileException, FileSizeException {
+        boolean exists = Files.exists(path);
+        if (!exists) {
+            throw new NoFileException();
         }
+        try{
+            return String.valueOf(Files.size(path));
+        }catch (IOException e){
+            throw new FileSizeException();
+        }
+    }
 }
-
-
-
-

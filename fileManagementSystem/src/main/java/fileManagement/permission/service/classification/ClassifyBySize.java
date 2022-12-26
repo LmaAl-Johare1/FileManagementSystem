@@ -17,9 +17,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+
 public class ClassifyBySize implements IClassify, IPermission {
     @Override
-    public List<FileModel> classify() throws JsonReadingException, NoFileException, NoDataInFileJsonException {
+    public List<FileModel> classify() throws JsonReadingException, NoDataInFileJsonException {
         ReadFileInfoFromJson read = new ReadFileInfoFromJson();
         List<FileModel> fileModels = read.getFileInfoFromJson();
         if (fileModels.isEmpty()) {
@@ -48,7 +49,7 @@ public class ClassifyBySize implements IClassify, IPermission {
 
     @Override
     public void permission() throws IOException, NameNotFoundException, NoDataInFileJsonException {
-       writeFileJsonForFiles();
-       System.out.println("Sort by Size :" + classify());
+        writeFileJsonForFiles();
+        System.out.println("Sort by Size :" + classify());
     }
 }
